@@ -4,7 +4,7 @@
  */
 package modelo;
 
-import vista.frmlogin;
+import vista.frmLogin;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Polleria {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        frmlogin iniciar = new frmlogin();
+        frmLogin iniciar = new frmLogin();
         iniciar.setVisible(true);
     }
     
