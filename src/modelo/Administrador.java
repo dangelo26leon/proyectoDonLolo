@@ -8,6 +8,13 @@ package modelo;
  *
  * @author leonv
  */
-public class Administrador {
+public class Administrador extends persona {
+
+    public Administrador() {
+    }
+
+    public Administrador(int id_empleado, String nombre, String apellido, String correo, int celular, int dni, String genero, String direccion, String pass, String rol) {
+        super(id_empleado, nombre, apellido, correo, celular, dni, genero, direccion, pass, rol);
+    }
     
 }
