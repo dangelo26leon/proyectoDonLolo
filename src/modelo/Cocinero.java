@@ -8,6 +8,14 @@ package modelo;
  *
  * @author leonv
  */
-public class Cocinero {
+public class Cocinero extends persona {
+
+    public Cocinero() {
+    }
+
+    public Cocinero(int id_empleado, String nombre, String apellido, String correo, int celular, int dni, String genero, String direccion, String pass, String rol) {
+        super(id_empleado, nombre, apellido, correo, celular, dni, genero, direccion, pass, rol);
+    }
+    
     
 }
