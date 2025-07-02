@@ -16,7 +16,7 @@ public class conexion {
     public Connection getConnection() {
         try {
             // URL de conexión a la base de datos "cevicheria" en el servidor local
-            String myBD = "";
+            String myBD = "jdbc:mysql://localhost:3306/prueba";
             // Establecer la conexión utilizando el controlador JDBC para MySQL
             conexion = DriverManager.getConnection(myBD, "root", "");
             return conexion;  // Retornar la conexión establecida
