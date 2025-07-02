@@ -17,6 +17,4 @@ public class Mesero extends persona {
         super(id_empleado, nombre, apellido, correo, celular, dni, genero, direccion, pass, rol);
     }
     
-    
-    
 }
