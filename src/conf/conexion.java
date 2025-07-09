@@ -16,9 +16,9 @@ public class conexion {
     public Connection getConnection() {
         try {
             // URL de conexión a la base de datos "cevicheria" en el servidor local
-            String myBD = "jdbc:mysql://localhost:3306/prueba";
+            String myBD = "jdbc:mysql://localhost:3306/polleria?serverTimezone=UTC";
             // Establecer la conexión utilizando el controlador JDBC para MySQL
-            conexion = DriverManager.getConnection(myBD, "root", "");
+            conexion = DriverManager.getConnection(myBD, "root", "dangelo");
             return conexion;  // Retornar la conexión establecida
         } catch (SQLException e) {
             // Si ocurre un error, imprimir el mensaje de error
