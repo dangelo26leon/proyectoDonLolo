@@ -5,6 +5,7 @@
 package vista;
 
 import controlador.salaControlador;
+import modelo.Login;
 
 /**
  *
@@ -17,6 +18,10 @@ public class frmPolleria extends javax.swing.JPanel {
      */
     public frmPolleria() {
         initComponents();
+    }
+
+    frmPolleria(Login lg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
