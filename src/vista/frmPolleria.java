@@ -61,7 +61,7 @@ public class frmPolleria extends javax.swing.JFrame {
         txtNombreSala1 = new javax.swing.JTextField();
         btnRegistrarSala = new javax.swing.JButton();
         btnCancelarSala = new javax.swing.JButton();
-        txtIdSala1 = new javax.swing.JTextField();
+        txtIdSala = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtBuscadorSala = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
@@ -99,24 +99,31 @@ public class frmPolleria extends javax.swing.JFrame {
         btnEditarEmpleado = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         TableUsuarios = new javax.swing.JTable();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        txtMesas1 = new javax.swing.JTextField();
-        btnRegistrarSala1 = new javax.swing.JButton();
-        btnCancelarSala1 = new javax.swing.JButton();
-        txtIdSala2 = new javax.swing.JTextField();
+        btnGuardarPlato = new javax.swing.JButton();
+        btnCancelarPlato = new javax.swing.JButton();
+        txtIdPlato = new javax.swing.JTextField();
         txtNombrePlato = new javax.swing.JTextField();
         txtPrecioPlato = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        txtPrecioPlato1 = new javax.swing.JTextField();
+        txtDescripcionPlato = new javax.swing.JTextField();
+        cbxTipoPlato = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        txtBuscadorPlato = new javax.swing.JTextField();
+        btnBuscarPlato = new javax.swing.JButton();
+        btnActualizarPlato = new javax.swing.JButton();
+        btnEliminarPlato = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(245, 239, 215));
@@ -207,7 +214,7 @@ public class frmPolleria extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1450, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1732, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -312,7 +319,7 @@ public class frmPolleria extends javax.swing.JFrame {
             }
         });
         jPanel11.add(btnCancelarSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 90, 110, 27));
-        jPanel11.add(txtIdSala1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 47, -1, 30));
+        jPanel11.add(txtIdSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 47, -1, 30));
 
         jPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 72, 1395, 124));
 
@@ -621,7 +628,7 @@ public class frmPolleria extends javax.swing.JFrame {
                         .addComponent(txtBuscadorEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnBuscarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
                         .addComponent(btnEditarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnEliminarEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -653,11 +660,190 @@ public class frmPolleria extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Usuarios", jPanel4);
 
+        jLabel18.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
+        jLabel18.setText("Registro de Platos");
+
+        jPanel13.setBackground(new java.awt.Color(255, 215, 225));
+        jPanel13.setForeground(new java.awt.Color(255, 215, 225));
+        jPanel13.setPreferredSize(new java.awt.Dimension(1395, 117));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel19.setText("Nombre:");
+        jPanel13.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 19, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel20.setText("Descripción:");
+        jPanel13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 17, -1, 20));
+
+        btnGuardarPlato.setBackground(new java.awt.Color(239, 231, 138));
+        btnGuardarPlato.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
+        btnGuardarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregar (1).png"))); // NOI18N
+        btnGuardarPlato.setText("Guardar");
+        btnGuardarPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarPlatoActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnGuardarPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 40, 110, 42));
+
+        btnCancelarPlato.setBackground(new java.awt.Color(239, 231, 138));
+        btnCancelarPlato.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
+        btnCancelarPlato.setText("Cancelar");
+        btnCancelarPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarPlatoActionPerformed(evt);
+            }
+        });
+        jPanel13.add(btnCancelarPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 90, 110, 27));
+        jPanel13.add(txtIdPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, -1, 30));
+
+        txtNombrePlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombrePlatoActionPerformed(evt);
+            }
+        });
+        jPanel13.add(txtNombrePlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 17, 201, 20));
+
+        txtPrecioPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrecioPlatoActionPerformed(evt);
+            }
+        });
+        jPanel13.add(txtPrecioPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 49, 79, 20));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel21.setText("Precio:");
+        jPanel13.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 51, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel22.setText("Categoría:");
+        jPanel13.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 84, -1, -1));
+
+        txtDescripcionPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescripcionPlatoActionPerformed(evt);
+            }
+        });
+        jPanel13.add(txtDescripcionPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 45, 225, 63));
+
+        cbxTipoPlato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Brasa", "Especial", "Guarnición" }));
+        jPanel13.add(cbxTipoPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 81, 124, -1));
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/busqueda (1).png"))); // NOI18N
+
+        txtBuscadorPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscadorPlatoActionPerformed(evt);
+            }
+        });
+
+        btnBuscarPlato.setBackground(new java.awt.Color(239, 231, 138));
+        btnBuscarPlato.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
+        btnBuscarPlato.setText("Buscar");
+        btnBuscarPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarPlatoActionPerformed(evt);
+            }
+        });
+
+        btnActualizarPlato.setBackground(new java.awt.Color(239, 231, 138));
+        btnActualizarPlato.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
+        btnActualizarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circulo-de-pluma.png"))); // NOI18N
+        btnActualizarPlato.setText("Editar");
+        btnActualizarPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarPlatoActionPerformed(evt);
+            }
+        });
+
+        btnEliminarPlato.setBackground(new java.awt.Color(239, 231, 138));
+        btnEliminarPlato.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
+        btnEliminarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circulo-cruzado.png"))); // NOI18N
+        btnEliminarPlato.setText("Eliminar");
+        btnEliminarPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarPlatoActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Nombre", "Categoria", "Precio", "Descripción"
+            }
+        ));
+        jTable1.setPreferredSize(new java.awt.Dimension(300, 50));
+        jScrollPane5.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(50);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(50);
+            jTable1.getColumnModel().getColumn(2).setMinWidth(200);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(300);
+            jTable1.getColumnModel().getColumn(3).setMinWidth(200);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(200);
+            jTable1.getColumnModel().getColumn(3).setMaxWidth(300);
+        }
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel18)
+                            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane5)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel23)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtBuscadorPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(255, 255, 255)
+                        .addComponent(btnActualizarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(btnEliminarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(311, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtBuscadorPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscarPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnActualizarPlato)
+                    .addComponent(btnEliminarPlato))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Platos", jPanel5);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1450, Short.MAX_VALUE)
+            .addGap(0, 1732, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,7 +856,7 @@ public class frmPolleria extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1450, Short.MAX_VALUE)
+            .addGap(0, 1732, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -683,7 +869,7 @@ public class frmPolleria extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1450, Short.MAX_VALUE)
+            .addGap(0, 1732, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,7 +882,7 @@ public class frmPolleria extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1450, Short.MAX_VALUE)
+            .addGap(0, 1732, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -704,156 +890,6 @@ public class frmPolleria extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Historial Pedidos", jPanel9);
-
-        jLabel18.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
-        jLabel18.setText("Registro de Platos");
-
-        jPanel13.setBackground(new java.awt.Color(255, 215, 225));
-        jPanel13.setForeground(new java.awt.Color(255, 215, 225));
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jLabel19.setText("Nombre:");
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jLabel20.setText("Número de Mesas:");
-
-        txtMesas1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMesas1ActionPerformed(evt);
-            }
-        });
-
-        btnRegistrarSala1.setBackground(new java.awt.Color(239, 231, 138));
-        btnRegistrarSala1.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
-        btnRegistrarSala1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/agregar (1).png"))); // NOI18N
-        btnRegistrarSala1.setText("Registrar");
-        btnRegistrarSala1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarSala1ActionPerformed(evt);
-            }
-        });
-
-        btnCancelarSala1.setBackground(new java.awt.Color(239, 231, 138));
-        btnCancelarSala1.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
-        btnCancelarSala1.setText("Cancelar");
-        btnCancelarSala1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarSala1ActionPerformed(evt);
-            }
-        });
-
-        txtNombrePlato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombrePlatoActionPerformed(evt);
-            }
-        });
-
-        txtPrecioPlato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrecioPlatoActionPerformed(evt);
-            }
-        });
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jLabel21.setText("Precio:");
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jLabel22.setText("Categoría:");
-
-        txtPrecioPlato1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrecioPlato1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(txtIdSala2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel22))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPrecioPlato1, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
-                            .addGroup(jPanel13Layout.createSequentialGroup()
-                                .addComponent(txtPrecioPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombrePlato)))
-                .addGap(24, 24, 24)
-                .addComponent(jLabel20)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(btnRegistrarSala1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(531, 531, 531)
-                        .addComponent(btnCancelarSala1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtMesas1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtMesas1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btnRegistrarSala1))
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(btnCancelarSala1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(txtNombrePlato, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtIdSala2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPrecioPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel21))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPrecioPlato1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22))
-                        .addContainerGap())))
-        );
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(279, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Platos", jPanel5);
 
         jPanel10.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 196, -1, 510));
 
@@ -970,17 +1006,13 @@ public class frmPolleria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 
-    private void txtMesas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesas1ActionPerformed
+    private void btnGuardarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPlatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMesas1ActionPerformed
+    }//GEN-LAST:event_btnGuardarPlatoActionPerformed
 
-    private void btnRegistrarSala1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarSala1ActionPerformed
+    private void btnCancelarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPlatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarSala1ActionPerformed
-
-    private void btnCancelarSala1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarSala1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelarSala1ActionPerformed
+    }//GEN-LAST:event_btnCancelarPlatoActionPerformed
 
     private void txtNombrePlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePlatoActionPerformed
         // TODO add your handling code here:
@@ -990,9 +1022,25 @@ public class frmPolleria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioPlatoActionPerformed
 
-    private void txtPrecioPlato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioPlato1ActionPerformed
+    private void txtDescripcionPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripcionPlatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrecioPlato1ActionPerformed
+    }//GEN-LAST:event_txtDescripcionPlatoActionPerformed
+
+    private void txtBuscadorPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscadorPlatoActionPerformed
+
+    private void btnBuscarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarPlatoActionPerformed
+
+    private void btnActualizarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarPlatoActionPerformed
+
+    private void btnEliminarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEliminarPlatoActionPerformed
 
     public void setControlador(salaControlador aThis) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -1008,27 +1056,31 @@ public class frmPolleria extends javax.swing.JFrame {
     private javax.swing.JPanel PanelMesas;
     private javax.swing.JPanel PanelSalas;
     private javax.swing.JTable TableUsuarios;
+    private javax.swing.JButton btnActualizarPlato;
     private javax.swing.JButton btnActualizarSala;
     private javax.swing.JButton btnBuscarEmpleado;
+    private javax.swing.JButton btnBuscarPlato;
     private javax.swing.JButton btnBuscarSala;
     private javax.swing.JButton btnCancelarEmpleado;
+    private javax.swing.JButton btnCancelarPlato;
     private javax.swing.JButton btnCancelarSala;
-    private javax.swing.JButton btnCancelarSala1;
     private javax.swing.JButton btnEditarEmpleado;
     private javax.swing.JButton btnEliminarEmpleado;
+    private javax.swing.JButton btnEliminarPlato;
     private javax.swing.JButton btnEliminarSala;
     private javax.swing.JButton btnExportar3;
+    private javax.swing.JButton btnGuardarPlato;
     private javax.swing.JButton btnIniciar;
     private javax.swing.JButton btnPestañaEstadoPedido;
     private javax.swing.JButton btnPestañaHistorialPedidosVentas;
     private javax.swing.JButton btnPestañaRegistroPlatos;
     private javax.swing.JButton btnPestañaSalas;
     private javax.swing.JButton btnRegistrarSala;
-    private javax.swing.JButton btnRegistrarSala1;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnUsuarios5;
     private javax.swing.JComboBox<String> cbxGeneroEmpleado;
     private javax.swing.JComboBox<String> cbxRol;
+    private javax.swing.JComboBox<String> cbxTipoPlato;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1044,6 +1096,7 @@ public class frmPolleria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1068,25 +1121,27 @@ public class frmPolleria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTable tableSala;
     private javax.swing.JTextField txtApellidosEmpleado;
     private javax.swing.JTextField txtBuscadorEmpleados;
+    private javax.swing.JTextField txtBuscadorPlato;
     private javax.swing.JTextField txtBuscadorSala;
     private javax.swing.JTextField txtCelularEmpleado;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDNIEmpleado;
+    private javax.swing.JTextField txtDescripcionPlato;
     private javax.swing.JTextField txtDireccionEmpleado;
     private javax.swing.JTextField txtIdEmpleado;
-    private javax.swing.JTextField txtIdSala1;
-    private javax.swing.JTextField txtIdSala2;
+    private javax.swing.JTextField txtIdPlato;
+    private javax.swing.JTextField txtIdSala;
     private javax.swing.JTextField txtMesas;
-    private javax.swing.JTextField txtMesas1;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtNombrePlato;
     private javax.swing.JTextField txtNombreSala1;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtPrecioPlato;
-    private javax.swing.JTextField txtPrecioPlato1;
     // End of variables declaration//GEN-END:variables
 }
