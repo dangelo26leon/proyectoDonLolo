@@ -26,7 +26,7 @@ public class loginDAO {
     
     public Login log(String correo, String pass) {
         Login l = new Login();
-        String sql = "SELECT * FROM usuarios WHERE correo = ? AND password = ?";
+        String sql = "SELECT * FROM usuarios WHERE correo = ? AND pass = ?";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -43,7 +43,7 @@ public class loginDAO {
                 l.setDni(rs.getInt("dni"));
                 l.setGenero(rs.getString("genero"));
                 l.setDireccion(rs.getString("direccion"));
-                l.setPass(rs.getString("password"));
+                l.setPass(rs.getString("pass"));
                 l.setRol(rs.getString("rol"));
             }
         } catch (SQLException e) {
@@ -54,7 +54,7 @@ public class loginDAO {
 
     
     public boolean Registrar(Login reg) {
-        String sql = "INSERT INTO usuarios (nombre, apellido, correo, celular, dni, genero, direccion, password, rol) VALUES (?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO usuarios (nombre, apellido, correo, celular, dni, genero, direccion, pass, rol) VALUES (?,?,?,?,?,?,?,?,?)";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -89,7 +89,7 @@ public class loginDAO {
                 lg.setNombre(rs.getString("nombre"));
                 lg.setApellido(rs.getString("apellido"));
                 lg.setCorreo(rs.getString("correo"));
-                lg.setPass(rs.getString("password"));
+                lg.setPass(rs.getString("pass"));
                 lg.setCelular(rs.getInt("celular"));
                 lg.setDni(rs.getInt("dni"));
                 lg.setGenero(rs.getString("genero"));
@@ -119,7 +119,7 @@ public class loginDAO {
                 lg.setNombre(rs.getString("nombre"));
                 lg.setApellido(rs.getString("apellido"));
                 lg.setCorreo(rs.getString("correo"));
-                lg.setPass(rs.getString("password"));
+                lg.setPass(rs.getString("pass"));
                 lg.setCelular(rs.getInt("celular"));
                 lg.setDni(rs.getInt("dni"));
                 lg.setGenero(rs.getString("genero"));
@@ -140,7 +140,7 @@ public class loginDAO {
     }
 
     public boolean EditarUsuario(Login usuario) {
-        String sql = "UPDATE usuarios SET nombre = ?, apellido = ?, correo = ?, celular = ?, dni = ?, genero = ?, direccion = ?, password = ?, rol = ? WHERE id = ?";
+        String sql = "UPDATE usuarios SET nombre = ?, apellido = ?, correo = ?, celular = ?, dni = ?, genero = ?, direccion = ?, pass = ?, rol = ? WHERE id = ?";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
