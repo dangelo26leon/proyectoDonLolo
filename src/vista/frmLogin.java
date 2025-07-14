@@ -23,7 +23,7 @@ public class frmLogin extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         txtCorreo.setText("");
         txtPass.setText("");
-        ImageIcon img = new ImageIcon(getClass().getResource("/images/LogoDonLolo(2).png"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/images/LogoDonLolo (2).png"));
         this.setIconImage(img.getImage());
     }
     
@@ -35,7 +35,7 @@ public class frmLogin extends javax.swing.JFrame {
             btnIniciar.setEnabled(false);
             lg = login.log(correo, pass);
             
-            if(lg.getCorreo() != null && lg.getPassword() !=null){
+            if(lg.getCorreo() != null && lg.getPass() !=null){
                 JOptionPane.showMessageDialog(this, "Inicio de sesión Correcta", "Éxito", JOptionPane.INFORMATION_MESSAGE);
                 frmPolleria sis = new frmPolleria(lg);
                 sis.setVisible(true);
@@ -191,10 +191,12 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
+        validar();
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

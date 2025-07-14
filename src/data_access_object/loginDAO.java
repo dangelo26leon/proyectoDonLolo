@@ -18,7 +18,7 @@ import modelo.Login;
  * @author leonv
  */
 public class loginDAO {
-     private Connection con;
+    private Connection con;
     private PreparedStatement ps;
     private ResultSet rs;
     private conexion cn = new conexion(); // Conexión a la base de datos
@@ -43,7 +43,7 @@ public class loginDAO {
                 l.setDni(rs.getInt("dni"));
                 l.setGenero(rs.getString("genero"));
                 l.setDireccion(rs.getString("direccion"));
-                l.setPassword(rs.getString("password"));
+                l.setPass(rs.getString("password"));
                 l.setRol(rs.getString("rol"));
             }
         } catch (SQLException e) {
@@ -65,7 +65,7 @@ public class loginDAO {
             ps.setInt(5, reg.getDni());
             ps.setString(6, reg.getGenero());
             ps.setString(7, reg.getDireccion());
-            ps.setString(8, reg.getPassword());
+            ps.setString(8, reg.getPass());
             ps.setString(9, reg.getRol());
             ps.execute(); // Ejecuta la inserción en la base de datos
             return true;
@@ -89,7 +89,7 @@ public class loginDAO {
                 lg.setNombre(rs.getString("nombre"));
                 lg.setApellido(rs.getString("apellido"));
                 lg.setCorreo(rs.getString("correo"));
-                lg.setPassword(rs.getString("password"));
+                lg.setPass(rs.getString("password"));
                 lg.setCelular(rs.getInt("celular"));
                 lg.setDni(rs.getInt("dni"));
                 lg.setGenero(rs.getString("genero"));
@@ -119,7 +119,7 @@ public class loginDAO {
                 lg.setNombre(rs.getString("nombre"));
                 lg.setApellido(rs.getString("apellido"));
                 lg.setCorreo(rs.getString("correo"));
-                lg.setPassword(rs.getString("password"));
+                lg.setPass(rs.getString("password"));
                 lg.setCelular(rs.getInt("celular"));
                 lg.setDni(rs.getInt("dni"));
                 lg.setGenero(rs.getString("genero"));
@@ -151,7 +151,7 @@ public class loginDAO {
             ps.setInt(5, usuario.getDni());
             ps.setString(6, usuario.getGenero());
             ps.setString(7, usuario.getDireccion());
-            ps.setString(8, usuario.getPassword());
+            ps.setString(8, usuario.getPass());
             ps.setString(9, usuario.getRol());
             ps.setInt(10, usuario.getId());
             return ps.executeUpdate() > 0; // Devuelve true si se actualizó al menos un registro

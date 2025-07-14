@@ -41,7 +41,7 @@ public class loginControlador {
             usuario.setDni(usuarioActualizado.getDni());
             usuario.setGenero(usuarioActualizado.getGenero());
             usuario.setDireccion(usuarioActualizado.getDireccion());
-            usuario.setPassword(usuarioActualizado.getPassword());
+            usuario.setPass(usuarioActualizado.getPass());
             usuario.setRol(usuarioActualizado.getRol());
             return true;
         }
@@ -63,7 +63,7 @@ public class loginControlador {
     
     public boolean verificarLogin(String correo, String password){
         for (Login usuario : usuarios){
-            if (usuario.getCorreo().equals(correo) && usuario.getPassword().equals(password)){
+            if (usuario.getCorreo().equals(correo) && usuario.getPass().equals(password)){
                 return true;
             }
         }

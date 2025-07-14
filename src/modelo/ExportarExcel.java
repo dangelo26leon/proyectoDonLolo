@@ -23,65 +23,63 @@ import org.apache.poi.ss.usermodel.Workbook;
  */
 public class ExportarExcel {
     
-    
-    
-    public void exportalExcel(JTable t) throws IOException {
-        //Crear un selector de archivos para guardar el archivo Excel
+    public void exportarExcel(JTable t) throws IOException {
+        // Crear un selector de archivos para guardar el archivo Excel
         JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de Excel", "xls");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de excel", "xls");
         chooser.setFileFilter(filter);
-        chooser.setDialogTitle("Guardar Archivo");
+        chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
-        
-        //Muestra el diálogo para guadar Archivo
-        if(chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+
+        // Mostrar el diálogo de guardar archivo
+        if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
             String ruta = chooser.getSelectedFile().toString().concat(".xls");
-            try{
-                //Crear el archivo Excel
+            try {
+                // Crear el archivo Excel
                 File archivoXLS = new File(ruta);
-                if(archivoXLS.exists()){
-                    archivoXLS.delete(); // Elimina archivo si existe uno
+                if (archivoXLS.exists()) {
+                    archivoXLS.delete();  // Eliminar archivo si ya existe
                 }
                 archivoXLS.createNewFile();
-                Workbook libro = new HSSFWorkbook();
-                FileOutputStream archivo = new FileOutputStream(archivoXLS);
-                Sheet hoja = libro.createSheet("Hoja de trabajo 1");
-                hoja.setDisplayGridlines(false);
-                
-                for(int f=0; f<t.getRowCount(); f++){
+                Workbook libro = new HSSFWorkbook();  // Crear un nuevo libro de trabajo Excel
+                FileOutputStream archivo = new FileOutputStream(archivoXLS);  // Crear flujo de salida
+                Sheet hoja = libro.createSheet("Mi hoja de trabajo 1");  // Crear hoja en el libro
+                hoja.setDisplayGridlines(false);  // Desactivar las líneas de cuadrícula
+
+                // Escribir nombres de las columnas en la primera fila
+                for (int f = 0; f < t.getRowCount(); f++) {
                     Row fila = hoja.createRow(f);
-                    for(int c=0; c<t.getColumnCount(); c++){
+                    for (int c = 0; c < t.getColumnCount(); c++) {
                         Cell celda = fila.createCell(c);
-                        if(f==0){
-                            celda.setCellValue(t.getColumnName(c));
+                        if (f == 0) {
+                            celda.setCellValue(t.getColumnName(c));  // Establecer el nombre de la columna
                         }
                     }
                 }
-                
+
+                // Escribir los datos de la tabla a partir de la segunda fila
                 int filaInicio = 1;
-                for(int f=0; f<t.getRowCount(); f++){
+                for (int f = 0; f < t.getRowCount(); f++) {
                     Row fila = hoja.createRow(filaInicio);
                     filaInicio++;
-                    for(int c=0; c<t.getColumnCount(); c++){
+                    for (int c = 0; c < t.getColumnCount(); c++) {
                         Cell celda = fila.createCell(c);
-                        if(t.getValueAt(f,c) instanceof Double){
-                            celda.setCellValue(Double.parseDouble(t.getValueAt(f, c).toString()));
-                        } else if(t.getValueAt(f, c) instanceof Float){
-                            celda.setCellValue(Float.parseFloat((String) t.getValueAt(f, c)));
+                        if (t.getValueAt(f, c) instanceof Double) {
+                            celda.setCellValue(Double.parseDouble(t.getValueAt(f, c).toString()));  // Para valores de tipo Double
+                        } else if (t.getValueAt(f, c) instanceof Float) {
+                            celda.setCellValue(Float.parseFloat((String) t.getValueAt(f, c)));  // Para valores de tipo Float
                         } else {
-                            celda.setCellValue(String.valueOf(t.getValueAt(f, c)));
-                            
+                            celda.setCellValue(String.valueOf(t.getValueAt(f, c)));  // Para otros tipos de datos
                         }
                     }
-                    
                 }
-                
-                //Escribe el archivo y lo cierra
+
+                // Escribir el archivo y cerrarlo
                 libro.write(archivo);
                 archivo.close();
-                Desktop.getDesktop().open(archivoXLS);
-            } catch (IOException | NumberFormatException e){
-                throw e; 
+                Desktop.getDesktop().open(archivoXLS);  // Abrir el archivo Excel creado
+            } catch (IOException | NumberFormatException e) {
+                throw e;  // Lanzar cualquier excepción que ocurra
             }
         }
     }

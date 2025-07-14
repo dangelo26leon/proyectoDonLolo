@@ -18,7 +18,7 @@ public class Login {
     private int dni;
     private String genero;
     private String direccion;
-    private String password;
+    private String pass;
     private String rol;
     
     public Login(){
@@ -34,7 +34,7 @@ public class Login {
         this.dni = dni;
         this.genero = genero;
         this.direccion = direccion;
-        this.password = password;
+        this.pass = pass;
         this.rol = rol;
     }
     
@@ -104,12 +104,12 @@ public class Login {
         this.direccion = direccion;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPass() {
+        return pass;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public String getRol() {
