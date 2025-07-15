@@ -106,7 +106,7 @@ public class frmLogin extends javax.swing.JFrame {
         });
         jPanel1.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 210, 40));
 
-        btnIniciar.setBackground(new java.awt.Color(239, 231, 138));
+        btnIniciar.setBackground(new java.awt.Color(255, 255, 153));
         btnIniciar.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         btnIniciar.setText("ACCEDER");
         btnIniciar.setToolTipText("");
@@ -210,7 +210,7 @@ public class frmLogin extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -247,4 +247,8 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables
+
+    
+    
 }
+

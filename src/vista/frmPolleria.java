@@ -81,6 +81,7 @@ public class frmPolleria extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         txtIdHistorialPedido.setVisible(false);
         
+        
         if (priv.getRol().equals("Administrador")) {
 
             LabelVendedor.setText(priv.getNombre());
@@ -374,7 +375,7 @@ public class frmPolleria extends javax.swing.JFrame {
                 btnPestañaEstadoPedidoActionPerformed(evt);
             }
         });
-        jPanel10.add(btnPestañaEstadoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 730, 216, 50));
+        jPanel10.add(btnPestañaEstadoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 730, 216, 50));
 
         btnPestañaHistorialPedidosVentas.setBackground(new java.awt.Color(182, 239, 255));
         btnPestañaHistorialPedidosVentas.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
@@ -384,7 +385,7 @@ public class frmPolleria extends javax.swing.JFrame {
                 btnPestañaHistorialPedidosVentasActionPerformed(evt);
             }
         });
-        jPanel10.add(btnPestañaHistorialPedidosVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 730, 216, 50));
+        jPanel10.add(btnPestañaHistorialPedidosVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 730, 216, 50));
 
         PanelSalas.setPreferredSize(new java.awt.Dimension(1300, 0));
         PanelSalas.setLayout(new java.awt.GridLayout(1, 0));
@@ -1971,12 +1972,12 @@ public class frmPolleria extends javax.swing.JFrame {
                     int id = Integer.parseInt(txtIdEmpleado.getText()); // Convertir el ID a entero
                     loginDAO loginDao = new loginDAO(); // Usar el DAO para eliminar el usuario
                     if (loginDao.EliminarUsuario(id)) {
-                        JOptionPane.showMessageDialog(null, "Empleado eliminado correctamente");
+                        JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente");
                         LimpiarUsuario(); // Método para limpiar los campos del formulario
                         LimpiarTable(); // Método para limpiar la tabla
                         ListarUsuarios(TableUsuarios); // Método para actualizar la tabla con los datos actuales
                     } else {
-                        JOptionPane.showMessageDialog(null, "Error al eliminar el empleado");
+                        JOptionPane.showMessageDialog(null, "Error al eliminar el usuario");
                     }
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "El ID debe ser un número válido");
