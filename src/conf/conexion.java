@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public class conexion {
     
-    private Connection conexion;
+    private Connection con;
     
     
     public Connection getConnection() {
@@ -18,8 +18,8 @@ public class conexion {
             // URL de conexión a la base de datos "cevicheria" en el servidor local
             String myBD = "jdbc:mysql://localhost:3306/polleria?serverTimezone=UTC";
             // Establecer la conexión utilizando el controlador JDBC para MySQL
-            conexion = DriverManager.getConnection(myBD, "root", "dangelo");
-            return conexion;  // Retornar la conexión establecida
+            con = DriverManager.getConnection(myBD, "root", "dangelo");
+            return con;  // Retornar la conexión establecida
         } catch (SQLException e) {
             // Si ocurre un error, imprimir el mensaje de error
             System.out.println(e.toString());

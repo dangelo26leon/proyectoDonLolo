@@ -73,7 +73,7 @@ public class frmPolleria extends javax.swing.JFrame {
     public frmPolleria(Login priv){
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
-        ImageIcon img = new ImageIcon(getClass().getResource("/images/donlolo_logo(2).png"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/images/donlolo_logo.png"));
         Image igmEscalada = img.getImage().getScaledInstance(labelLogo.getWidth(), labelLogo.getHeight(), Image.SCALE_SMOOTH);
         Icon icono = new ImageIcon(igmEscalada);
         labelLogo.setIcon(icono);
@@ -307,7 +307,7 @@ public class frmPolleria extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(245, 239, 215));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/donlolo_logo (2).png"))); // NOI18N
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/donlolo_logo.png"))); // NOI18N
         labelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 labelLogoMouseClicked(evt);
@@ -2861,7 +2861,7 @@ public class frmPolleria extends javax.swing.JFrame {
         for (int i = 0; i < Listar.size(); i++) {
             int id = Listar.get(i).getId_sala();
             int cantidad = Listar.get(i).getMesa();
-            JButton boton = new JButton(Listar.get(i).getNombre(), new ImageIcon(getClass().getResource("/img/salas.png")));
+            JButton boton = new JButton(Listar.get(i).getNombre(), new ImageIcon(getClass().getResource("/images/sala.png")));
             boton.setCursor(new Cursor(Cursor.HAND_CURSOR));
             boton.setHorizontalTextPosition(JButton.CENTER);
             boton.setVerticalTextPosition(JButton.BOTTOM);
@@ -2881,7 +2881,7 @@ public class frmPolleria extends javax.swing.JFrame {
         for (int i = 1; i <= cant; i++) {
             int num_mesa = i;
             //verificar estado
-            JButton boton = new JButton("MESA N°: " + i, new ImageIcon(getClass().getResource("/img/mesa.png")));
+            JButton boton = new JButton("MESA N°: " + i, new ImageIcon(getClass().getResource("/images/mesa.png")));
             boton.setHorizontalTextPosition(JButton.CENTER);
             boton.setVerticalTextPosition(JButton.BOTTOM);
             int verificar = pedDao.verificarEstadoPedido(num_mesa, id_sala);
