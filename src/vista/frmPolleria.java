@@ -101,10 +101,25 @@ public class frmPolleria extends javax.swing.JFrame {
             LabelVendedor.setText(priv.getNombre());
         }
         
-        if (priv.getRol().equals("Cocinero")) {
-            // Deshabilitar la pestaña y otras funcionalidadesss
+        /*if (priv.getRol().equals("Cocinero")) {
             jTabbedPane1.setEnabled(false);
-            jPanel9.setEnabled(false);
+            PanelSalas.setEnabled(false);
+            btnPestañaSalas.setEnabled(false);
+            btnExportar.setEnabled(false);
+            btnExportar2.setEnabled(false);
+            btnUsuarios4.setEnabled(false);
+            btnPestañaHistorialPedidosVentas.setEnabled(false);
+            btnPestañaRegistroPlatos.setEnabled(false);
+            labelLogo.setEnabled(false);
+            LabelVendedor.setText(priv.getNombre());
+        } else {
+            LabelVendedor.setText(priv.getNombre());
+        }*/
+        
+        if (priv.getRol().equals("Cocinero")) {
+            // Deshabilitar la pestaña y otras funcionalidades
+            jTabbedPane1.setEnabled(false);
+            jPanel1.setEnabled(false);
             PanelSalas.setEnabled(false);
             btnPestañaSalas.setEnabled(false);
             btnExportar.setEnabled(false);
@@ -131,6 +146,8 @@ public class frmPolleria extends javax.swing.JFrame {
             LabelVendedor.setText(priv.getNombre());
         }
         
+        
+        
         txtIdHistorialPedido.setVisible(false);
         txtIdPedido.setVisible(false);
         txtIdPlato.setVisible(false);
@@ -142,7 +159,7 @@ public class frmPolleria extends javax.swing.JFrame {
         txtIdDetalle.setVisible(false);
         txtTempIdSala.setVisible(false);
         txtTempNumMesa.setVisible(false);
-        panelSalas();
+        
         
     }
     
@@ -158,16 +175,6 @@ public class frmPolleria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel10 = new javax.swing.JPanel();
-        labelLogo = new javax.swing.JLabel();
-        btnSalir = new javax.swing.JButton();
-        btnUsuarios4 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        LabelVendedor = new javax.swing.JLabel();
-        btnPestañaRegistroPlatos = new javax.swing.JButton();
-        btnPestañaSalas = new javax.swing.JButton();
-        btnPestañaEstadoPedido = new javax.swing.JButton();
-        btnPestañaHistorialPedidosVentas = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -256,8 +263,6 @@ public class frmPolleria extends javax.swing.JFrame {
         Eliminar = new javax.swing.JButton();
         txtTempIdSala = new javax.swing.JTextField();
         txtTempNumMesa = new javax.swing.JTextField();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        tableMenu = new javax.swing.JTable();
         Restar = new javax.swing.JButton();
         jLabel27 = new javax.swing.JLabel();
         btnAgregarComentario = new javax.swing.JButton();
@@ -267,6 +272,8 @@ public class frmPolleria extends javax.swing.JFrame {
         btnGenerarPedido = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         txtComentario = new javax.swing.JTextPane();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tableMenu = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
@@ -299,93 +306,21 @@ public class frmPolleria extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         TablePedidos = new javax.swing.JTable();
         btnExportar = new javax.swing.JButton();
+        btnPestañaHistorialPedidosVentas = new javax.swing.JButton();
+        btnPestañaEstadoPedido = new javax.swing.JButton();
+        btnPestañaSalas = new javax.swing.JButton();
+        LabelVendedor = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnPestañaRegistroPlatos = new javax.swing.JButton();
+        btnUsuarios4 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        labelLogo = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(245, 239, 215));
         setMinimumSize(new java.awt.Dimension(1520, 820));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel10.setBackground(new java.awt.Color(245, 239, 215));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/donlolo_logo.png"))); // NOI18N
-        labelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelLogoMouseClicked(evt);
-            }
-        });
-        jPanel10.add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
-
-        btnSalir.setBackground(new java.awt.Color(239, 231, 138));
-        btnSalir.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
-        btnSalir.setText(" Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1366, 15, 150, 50));
-
-        btnUsuarios4.setBackground(new java.awt.Color(239, 231, 138));
-        btnUsuarios4.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
-        btnUsuarios4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png"))); // NOI18N
-        btnUsuarios4.setText(" Usuarios");
-        btnUsuarios4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuarios4ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnUsuarios4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 15, 150, 50));
-
-        jLabel2.setFont(new java.awt.Font("Impact", 0, 62)); // NOI18N
-        jLabel2.setText("BRASA & BROASTER \"DON LOLO\" ");
-        jPanel10.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 790, 60));
-
-        LabelVendedor.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        LabelVendedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelVendedor.setText("SISTEMA DE PEDIDOS");
-        jPanel10.add(LabelVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, 190, -1));
-
-        btnPestañaRegistroPlatos.setBackground(new java.awt.Color(182, 239, 255));
-        btnPestañaRegistroPlatos.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
-        btnPestañaRegistroPlatos.setText("Registro de Platos");
-        btnPestañaRegistroPlatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPestañaRegistroPlatosActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnPestañaRegistroPlatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 730, 216, 50));
-
-        btnPestañaSalas.setBackground(new java.awt.Color(182, 239, 255));
-        btnPestañaSalas.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
-        btnPestañaSalas.setText("Gestión de Salas");
-        btnPestañaSalas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPestañaSalasActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnPestañaSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 730, 216, 50));
-
-        btnPestañaEstadoPedido.setBackground(new java.awt.Color(182, 239, 255));
-        btnPestañaEstadoPedido.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
-        btnPestañaEstadoPedido.setText("Seguimiento de Pedidos");
-        btnPestañaEstadoPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPestañaEstadoPedidoActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnPestañaEstadoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 730, 216, 50));
-
-        btnPestañaHistorialPedidosVentas.setBackground(new java.awt.Color(182, 239, 255));
-        btnPestañaHistorialPedidosVentas.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
-        btnPestañaHistorialPedidosVentas.setText("Historial de Pedidos");
-        btnPestañaHistorialPedidosVentas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPestañaHistorialPedidosVentasActionPerformed(evt);
-            }
-        });
-        jPanel10.add(btnPestañaHistorialPedidosVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 730, 216, 50));
 
         PanelSalas.setPreferredSize(new java.awt.Dimension(1300, 0));
         PanelSalas.setLayout(new java.awt.GridLayout(1, 0));
@@ -534,7 +469,7 @@ public class frmPolleria extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane3)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1440, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1050,8 +985,11 @@ public class frmPolleria extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Platos", jPanel5);
 
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel26.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         jLabel26.setText("Registro de Pedidos");
+        jPanel6.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 18, -1, -1));
 
         jPanel14.setBackground(new java.awt.Color(255, 215, 225));
         jPanel14.setForeground(new java.awt.Color(255, 215, 225));
@@ -1121,6 +1059,8 @@ public class frmPolleria extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        jPanel6.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 83, 561, 386));
+
         Eliminar.setBackground(new java.awt.Color(239, 231, 138));
         Eliminar.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
         Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/circulo-cruzado.png"))); // NOI18N
@@ -1130,36 +1070,21 @@ public class frmPolleria extends javax.swing.JFrame {
                 EliminarActionPerformed(evt);
             }
         });
+        jPanel6.add(Eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 260, -1, 27));
 
         txtTempIdSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTempIdSalaActionPerformed(evt);
             }
         });
+        jPanel6.add(txtTempIdSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(645, 35, -1, 30));
 
         txtTempNumMesa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTempNumMesaActionPerformed(evt);
             }
         });
-
-        tableMenu.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Plato", "Categoría", "Cantidad", "Precio", "SubTotal", "Comentario"
-            }
-        ));
-        jScrollPane8.setViewportView(tableMenu);
-        if (tableMenu.getColumnModel().getColumnCount() > 0) {
-            tableMenu.getColumnModel().getColumn(0).setMinWidth(50);
-            tableMenu.getColumnModel().getColumn(0).setPreferredWidth(50);
-            tableMenu.getColumnModel().getColumn(0).setMaxWidth(50);
-        }
+        jPanel6.add(txtTempNumMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(727, 35, -1, 30));
 
         Restar.setBackground(new java.awt.Color(239, 231, 138));
         Restar.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
@@ -1169,9 +1094,11 @@ public class frmPolleria extends javax.swing.JFrame {
                 RestarActionPerformed(evt);
             }
         });
+        jPanel6.add(Restar, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 258, 40, -1));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel27.setText("Comentario:");
+        jPanel6.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 295, -1, -1));
 
         btnAgregarComentario.setBackground(new java.awt.Color(239, 231, 138));
         btnAgregarComentario.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
@@ -1182,6 +1109,7 @@ public class frmPolleria extends javax.swing.JFrame {
                 btnAgregarComentarioActionPerformed(evt);
             }
         });
+        jPanel6.add(btnAgregarComentario, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 424, 116, -1));
 
         btnEliminarTempPlato.setBackground(new java.awt.Color(239, 231, 138));
         btnEliminarTempPlato.setFont(new java.awt.Font("Britannic Bold", 0, 12)); // NOI18N
@@ -1191,13 +1119,16 @@ public class frmPolleria extends javax.swing.JFrame {
                 btnEliminarTempPlatoActionPerformed(evt);
             }
         });
+        jPanel6.add(btnEliminarTempPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(882, 426, 110, 27));
 
         jLabel31.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         jLabel31.setText("Total a pagar:");
+        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 340, -1, -1));
 
         totalMenu.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         totalMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         totalMenu.setText("00.00");
+        jPanel6.add(totalMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 340, -1, -1));
 
         btnGenerarPedido.setBackground(new java.awt.Color(239, 231, 138));
         btnGenerarPedido.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
@@ -1208,96 +1139,37 @@ public class frmPolleria extends javax.swing.JFrame {
                 btnGenerarPedidoActionPerformed(evt);
             }
         });
+        jPanel6.add(btnGenerarPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 380, 181, 43));
 
         jScrollPane10.setViewportView(txtComentario);
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel27)
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                                            .addComponent(Restar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(Eliminar))
-                                        .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 818, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addContainerGap(17, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(btnAgregarComentario, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(161, 161, 161)
-                                        .addComponent(btnEliminarTempPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel31)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(totalMenu)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnGenerarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(129, 129, 129))))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel26)
-                        .addGap(326, 326, 326)
-                        .addComponent(txtTempIdSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtTempNumMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel26)
-                            .addComponent(txtTempNumMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtTempIdSala, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Restar)
-                            .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel27)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEliminarTempPlato, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnAgregarComentario)))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel31)
-                                    .addComponent(totalMenu))
-                                .addGap(18, 18, 18)
-                                .addComponent(btnGenerarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 386, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel6.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 318, 387, 100));
+
+        tableMenu.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Plato", "Tipo", "Cantidad", "Precio", "SubTotal", "Comentario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableMenu.setRowHeight(23);
+        tableMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMenuMouseClicked(evt);
+            }
+        });
+        jScrollPane11.setViewportView(tableMenu);
+
+        jPanel6.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 810, 170));
 
         jTabbedPane1.addTab("Registro Pedido", jPanel6);
 
@@ -1619,304 +1491,509 @@ public class frmPolleria extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Historial Pedidos", jPanel9);
 
-        jPanel10.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 196, 1440, 510));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 196, 1440, 510));
+
+        btnPestañaHistorialPedidosVentas.setBackground(new java.awt.Color(182, 239, 255));
+        btnPestañaHistorialPedidosVentas.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        btnPestañaHistorialPedidosVentas.setText("Historial de Pedidos");
+        btnPestañaHistorialPedidosVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPestañaHistorialPedidosVentasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPestañaHistorialPedidosVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 730, 216, 50));
+
+        btnPestañaEstadoPedido.setBackground(new java.awt.Color(182, 239, 255));
+        btnPestañaEstadoPedido.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        btnPestañaEstadoPedido.setText("Seguimiento de Pedidos");
+        btnPestañaEstadoPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPestañaEstadoPedidoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPestañaEstadoPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 730, 216, 50));
+
+        btnPestañaSalas.setBackground(new java.awt.Color(182, 239, 255));
+        btnPestañaSalas.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        btnPestañaSalas.setText("Gestión de Salas");
+        btnPestañaSalas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPestañaSalasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPestañaSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 730, 216, 50));
+
+        LabelVendedor.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        LabelVendedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelVendedor.setText("SISTEMA DE PEDIDOS");
+        getContentPane().add(LabelVendedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, 190, -1));
+
+        jLabel2.setFont(new java.awt.Font("Impact", 0, 62)); // NOI18N
+        jLabel2.setText("BRASA & BROASTER \"DON LOLO\" ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 790, 60));
+
+        btnPestañaRegistroPlatos.setBackground(new java.awt.Color(182, 239, 255));
+        btnPestañaRegistroPlatos.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        btnPestañaRegistroPlatos.setText("Registro de Platos");
+        btnPestañaRegistroPlatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPestañaRegistroPlatosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPestañaRegistroPlatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 730, 216, 50));
+
+        btnUsuarios4.setBackground(new java.awt.Color(239, 231, 138));
+        btnUsuarios4.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        btnUsuarios4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuario.png"))); // NOI18N
+        btnUsuarios4.setText(" Usuarios");
+        btnUsuarios4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuarios4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnUsuarios4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 15, 150, 50));
+
+        btnSalir.setBackground(new java.awt.Color(239, 231, 138));
+        btnSalir.setFont(new java.awt.Font("Britannic Bold", 0, 16)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit.png"))); // NOI18N
+        btnSalir.setText(" Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1366, 15, 150, 50));
+
+        labelLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/donlolo_logo.png"))); // NOI18N
+        labelLogo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelLogoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(labelLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
+
+        jPanel10.setBackground(new java.awt.Color(245, 239, 215));
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1540, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
 
         getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1540, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnUsuarios4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarios4ActionPerformed
+    private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
         // TODO add your handling code here:
-        LimpiarTable();
-        ListarUsuarios();
-        jTabbedPane1.setSelectedIndex(3);
-    }//GEN-LAST:event_btnUsuarios4ActionPerformed
+        ExportarExcel obj;
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
-        int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que deseas salir?", "Confirmar salida", JOptionPane.YES_NO_OPTION);
-
-        // Si el usuario selecciona "Sí" (JOptionPane.YES_OPTION), salir del programa
-        if (confirm == JOptionPane.YES_OPTION) {
-            System.exit(0);
+        try{
+            obj = new ExportarExcel();
+            obj.exportarExcel(TablePedidos);
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
         }
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_btnExportarActionPerformed
 
-    private void btnPestañaRegistroPlatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaRegistroPlatosActionPerformed
+    private void TablePedidosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePedidosMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TablePedidosMouseEntered
+
+    private void TablePedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePedidosMouseClicked
+        // TODO add your handling code here:
+        int fila = TablePedidos.rowAtPoint(evt.getPoint());
+        int id_pedido = Integer.parseInt(TablePedidos.getValueAt(fila, 0).toString());
         LimpiarTable();
-        ListarPlatos(TablePlatos);
-        jTabbedPane1.setSelectedIndex(4);
-    }//GEN-LAST:event_btnPestañaRegistroPlatosActionPerformed
+        verPedido(id_pedido);
+        verPedidoDetalle(id_pedido);
+        jTabbedPane1.setSelectedIndex(7);
+        btnFinalizar.setEnabled(false);
+        txtIdHistorialPedido.setText("" + id_pedido);
+    }//GEN-LAST:event_TablePedidosMouseClicked
 
-    private void btnPestañaSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaSalasActionPerformed
-        LimpiarTable();
-        ListarSalas();
-        jTabbedPane1.setSelectedIndex(1);
-    }//GEN-LAST:event_btnPestañaSalasActionPerformed
-
-    private void btnPestañaEstadoPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaEstadoPedidoActionPerformed
+    private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
         // TODO add your handling code here:
-        LimpiarTable();
-        ListarDetallesPedido();
-        jTabbedPane1.setSelectedIndex(6);
-    }//GEN-LAST:event_btnPestañaEstadoPedidoActionPerformed
+        // Obtiene el ID del pedido desde el campo de texto
+        int idPedido = Integer.parseInt(txtIdPedido.getText().trim());
 
-    private void btnPestañaHistorialPedidosVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaHistorialPedidosVentasActionPerformed
-        // TODO add your handling code here:
-        LimpiarTable();
-        ListarPedidos();
-        jTabbedPane1.setSelectedIndex(8);
-    }//GEN-LAST:event_btnPestañaHistorialPedidosVentasActionPerformed
-
-    private void txtNombreSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreSalaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreSalaActionPerformed
-
-    private void txtMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMesasActionPerformed
-
-    private void btnRegistrarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarSalaActionPerformed
-        // TODO add your handling code here:
-        if (txtNombreSala.getText().equals("") || txtMesas.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Los campos esta vacios");
-        } else {
-            sl.setNombre(txtNombreSala.getText());
-            sl.setMesa(Integer.parseInt(txtMesas.getText()));
-            slDao.registrarSala(sl);
-            JOptionPane.showMessageDialog(null, "Sala Registrado");
-            LimpiarSala();
-            LimpiarTable();
-            ListarSalas();
-        }
-    }//GEN-LAST:event_btnRegistrarSalaActionPerformed
-
-    private void btnCancelarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarSalaActionPerformed
-        // TODO add your handling code here:
-        LimpiarSala();
-    }//GEN-LAST:event_btnCancelarSalaActionPerformed
-
-    private void btnEliminarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarSalaActionPerformed
-        // TODO add your handling code here:
-        if (!"".equals(txtIdSala.getText())) {
-            int pregunta = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar");
+        // Crea una instancia de tu DAO para poder llamar a los métodos
+        //PedidoDAO pedDao = new PedidoDAO();
+        // Verifica si todos los detalles del pedido están en "REALIZADO"
+        if (pedDao.verificarDetallesRealizados(idPedido)) {
+            // Si todos los detalles están realizados, pregunta si se desea finalizar
+            int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro de finalizar el pedido?");
             if (pregunta == 0) {
-                int id = Integer.parseInt(txtIdSala.getText());
-                slDao.eliminarSala(id);
-                LimpiarSala();
-                LimpiarTable();
-                ListarSalas();
+                // Si la respuesta es afirmativa, actualiza el estado del pedido
+                if (pedDao.actualizarEstado(idPedido)) {
+                    // Si el estado se actualizó correctamente, genera el PDF
+
+                    JOptionPane.showMessageDialog(null, "Pedido finalizado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al finalizar el pedido", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Seleccione una fila");
+            // Si no todos los detalles están en "REALIZADO", muestra un mensaje de error
+            JOptionPane.showMessageDialog(null, "No se puede finalizar el pedido. Todos los detalles deben estar en estado 'REALIZADO'", "Error", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnEliminarSalaActionPerformed
+    }//GEN-LAST:event_btnFinalizarActionPerformed
 
-    private void btnActualizarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarSalaActionPerformed
+    private void txtNumMesaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumMesaFinalizarActionPerformed
         // TODO add your handling code here:
-        // Validar si se seleccionó una fila
-        if ("".equals(txtIdSala.getText())) {
-            JOptionPane.showMessageDialog(null, "Seleccione una fila");
+    }//GEN-LAST:event_txtNumMesaFinalizarActionPerformed
+
+    private void txtSalaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalaFinalizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSalaFinalizarActionPerformed
+
+    private void txtIdPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdPedidoActionPerformed
+
+    private void txtFechaHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaHoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFechaHoraActionPerformed
+
+    private void txtBuscadorConfirmacionPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorConfirmacionPedidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscadorConfirmacionPedidoActionPerformed
+
+    private void btnExportar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportar2ActionPerformed
+        // TODO add your handling code here:
+        ExportarExcel obj;
+
+        try{
+            obj = new ExportarExcel();
+            obj.exportarExcel(tableConfirmacionPedidos);
+        } catch (IOException ex){
+            System.out.println("Error: " + ex);
+        }
+    }//GEN-LAST:event_btnExportar2ActionPerformed
+
+    private void txtIdDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdDetalleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdDetalleActionPerformed
+
+    private void btnCambiarEstadoDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarEstadoDetalleActionPerformed
+        // TODO add your handling code here:
+        // Verifica si se seleccionó una fila
+        int filaSeleccionada = tableConfirmacionPedidos.getSelectedRow();
+        if (filaSeleccionada == -1) {
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione un registro de la tabla.");
+            return;
+        }
+
+        // Obtén el ID del detalle desde la columna correspondiente
+        int idDetalle = Integer.parseInt(tableConfirmacionPedidos.getValueAt(filaSeleccionada, 0).toString());
+
+        // Cambiar el estado del detalle
+        boolean resultado = pedDao.cambiarEstadoDetalle(idDetalle, "REALIZADO");
+        if (resultado) {
+            JOptionPane.showMessageDialog(null, "Estado cambiado a 'REALIZADO'");
+            actualizarTablaDetalles(); // Método opcional para refrescar la tabla
+
         } else {
-            // Validar si el nombre de la sala no está vacío
-            if (!"".equals(txtNombreSala.getText()) && !"".equals(txtMesas.getText())) {
+            JOptionPane.showMessageDialog(null, "Error al cambiar el estado");
+        }
+    }//GEN-LAST:event_btnCambiarEstadoDetalleActionPerformed
+
+    private void TablePlatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePlatosMouseClicked
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        int fila = TablePlatos.rowAtPoint(evt.getPoint());
+
+        // Establece los valores de los otros campos de texto
+        txtIdPlato.setText(TablePlatos.getValueAt(fila, 0).toString());
+        txtNombrePlato.setText(TablePlatos.getValueAt(fila, 1).toString());
+
+        // Establece el valor seleccionado del ComboBox
+        String tipoPlato = TablePlatos.getValueAt(fila, 2).toString(); // Obtén el valor de la columna del tipo de plato
+        cbxTipoPlato.setSelectedItem(tipoPlato); // Establece el valor en el ComboBox
+
+        txtPrecioPlato.setText(TablePlatos.getValueAt(fila, 3).toString());
+        txtDescripcionPlato.setText(TablePlatos.getValueAt(fila, 4).toString());
+    }//GEN-LAST:event_TablePlatosMouseClicked
+
+    private void btnEliminarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPlatoActionPerformed
+        // TODO add your handling code here:
+        // Verificar si el ID está vacío
+        if (!"".equals(txtIdPlato.getText())) {
+            // Confirmar si el usuario desea eliminar el registro
+            int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este plato?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+            if (pregunta == JOptionPane.YES_OPTION) {
+                try {
+                    int id = Integer.parseInt(txtIdPlato.getText()); // Convertir el ID a entero
+                    productoDAO productoDAO = new productoDAO();
+                    if (productoDAO.eliminar(id)) {
+                        JOptionPane.showMessageDialog(null, "Plato eliminado correctamente");
+                        LimpiarPlatos(); // Método para limpiar los campos del formulario
+                        LimpiarTable(); // Método para limpiar la tabla
+                        ListarPlatos(TablePlatos); // Método para actualizar la tabla con los datos actuales
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error al eliminar el plato");
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "El ID debe ser un número válido");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
+        }
+    }//GEN-LAST:event_btnEliminarPlatoActionPerformed
+
+    private void btnEditarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPlatoActionPerformed
+        // TODO add your handling code here:
+        // Verificar si el ID está vacío
+        if ("".equals(txtIdPlato.getText())) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
+        } else {
+            // Validar que los campos obligatorios no estén vacíos
+            if (!"".equals(txtNombrePlato.getText()) && !"".equals(txtPrecioPlato.getText()) && !"".equals(txtDescripcionPlato.getText())) {
+
                 // Mostrar ventana de confirmación
                 int respuesta = JOptionPane.showConfirmDialog(null,
-                        "¿Está seguro de que desea actualizar esta sala?",
-                        "Confirmación de Actualización",
-                        JOptionPane.YES_NO_OPTION);
+                    "¿Está seguro de que desea editar este plato?",
+                    "Confirmación de Edición",
+                    JOptionPane.YES_NO_OPTION);
 
                 // Si el usuario selecciona 'Sí'
                 if (respuesta == JOptionPane.YES_OPTION) {
                     try {
-                        // Asignar valores al objeto Sala
-                        sl.setId_sala(Integer.parseInt(txtIdSala.getText()));
-                        sl.setNombre(txtNombreSala.getText());
-                        sl.setMesa(Integer.parseInt(txtMesas.getText())); // Asegúrate de convertir el texto a un entero
+                        Producto producto = new Producto();
+                        producto.setId_producto(Integer.parseInt(txtIdPlato.getText()));
+                        producto.setNom_producto(txtNombrePlato.getText());
+                        producto.setPrecio(Double.parseDouble(txtPrecioPlato.getText()));
+                        producto.setDescripcion(txtDescripcionPlato.getText());
+                        producto.setTipoPlato(cbxTipoPlato.getSelectedItem().toString());
 
-                        // Llamar al DAO para actualizar la sala
-                        if (slDao.modificarSala(sl)) {
-                            JOptionPane.showMessageDialog(null, "Sala modificada correctamente");
-                            LimpiarSala();
+                        productoDAO productoDAO = new productoDAO();
+                        if (productoDAO.modificar(producto)) {
+                            JOptionPane.showMessageDialog(null, "Plato modificado correctamente");
                             LimpiarTable();
-                            ListarSalas();
+                            ListarPlatos(TablePlatos); // Método para actualizar la tabla
+                            LimpiarPlatos(); // Método para limpiar los campos del formulario
                         } else {
-                            JOptionPane.showMessageDialog(null, "Error al modificar la sala");
+                            JOptionPane.showMessageDialog(null, "Error al modificar el plato");
                         }
-                    } catch (NumberFormatException e) {
-                        // Capturar posibles errores de conversión de texto a entero
-                        JOptionPane.showMessageDialog(null, "El campo 'Mesas' debe ser un número válido");
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "El precio debe ser un número válido");
                     }
                 } else {
                     // Si el usuario selecciona 'No', no se hace nada
-                    JOptionPane.showMessageDialog(null, "Actualización cancelada");
+                    JOptionPane.showMessageDialog(null, "Edición cancelada");
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "Complete todos los campos");
+                JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
             }
         }
-    }//GEN-LAST:event_btnActualizarSalaActionPerformed
+    }//GEN-LAST:event_btnEditarPlatoActionPerformed
 
-    private void txtBuscadorSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorSalaActionPerformed
+    private void btnBuscarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPlatoActionPerformed
         // TODO add your handling code here:
         // Obtener el texto del campo de búsqueda
-        String busqueda = txtBuscadorSala.getText().trim();
+        String busqueda = txtBuscadorPlato.getText().trim();
 
         // Verificar si el campo está vacío
         if (busqueda.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese el nombre de la sala que desea buscar");
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre del plato que desea buscar");
             return;
         }
 
         // Obtener el modelo de la tabla
-        DefaultTableModel modelo = (DefaultTableModel) tableSala.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) TablePlatos.getModel();
         // Limpiar la tabla antes de mostrar resultados
         modelo.setRowCount(0);
 
-        // Consultar la base de datos para buscar las salas
-        List<Sala> salas = slDao.listarSalas(); // Recuperar todas las salas
+        // Consultar la base de datos para buscar los platos
+        productoDAO productoDAO = new productoDAO(); // Crear una instancia de ProductoDAO
+        List<Producto> platos = productoDAO.listar(busqueda); // Buscar platos con el nombre que contiene la búsqueda
         boolean encontrado = false;
 
-        for (Sala sala : salas) {
-            if (sala.getNombre().toLowerCase().contains(busqueda.toLowerCase())) {
-                // Agregar la sala encontrada a la tabla
-                modelo.addRow(new Object[]{
-                    sala.getId_sala(),
-                    sala.getNombre(),
-                    sala.getMesa()
-                });
-                encontrado = true;
-            }
+        // Recorrer la lista de platos para agregar aquellos que coinciden con la búsqueda
+        for (Producto plato : platos) {
+            modelo.addRow(new Object[]{
+                plato.getId_producto(),
+                plato.getNom_producto(),
+                plato.getTipoPlato(),
+                plato.getPrecio(),
+                plato.getDescripcion()
+            });
+            encontrado = true;
         }
 
         // Mostrar mensaje si no se encontraron resultados
         if (!encontrado) {
-            JOptionPane.showMessageDialog(null, "No se encontraron salas que coincidan con la búsqueda");
+            JOptionPane.showMessageDialog(null, "No se encontraron platos que coincidan con la búsqueda");
         }
-    }//GEN-LAST:event_txtBuscadorSalaActionPerformed
+    }//GEN-LAST:event_btnBuscarPlatoActionPerformed
 
-    private void btnBuscarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarSalaActionPerformed
+    private void txtBuscadorPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorPlatoActionPerformed
         // TODO add your handling code here:
-        String busqueda = txtBuscadorSala.getText().trim();
+    }//GEN-LAST:event_txtBuscadorPlatoActionPerformed
 
-        // Verificar si el campo está vacío
-        if (busqueda.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese el nombre de la sala que desea buscar");
-            return;
-        }
+    private void txtDescripcionPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripcionPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescripcionPlatoActionPerformed
 
-        // Obtener el modelo de la tabla
-        DefaultTableModel modelo = (DefaultTableModel) tableSala.getModel();
-        // Limpiar la tabla antes de mostrar resultados
-        modelo.setRowCount(0);
+    private void txtPrecioPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioPlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecioPlatoActionPerformed
 
-        // Consultar la base de datos para buscar las salas
-        List<Sala> salas = slDao.listarSalas(); // Recuperar todas las salas
-        boolean encontrado = false;
+    private void txtNombrePlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePlatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePlatoActionPerformed
 
-        for (Sala sala : salas) {
-            if (sala.getNombre().toLowerCase().contains(busqueda.toLowerCase())) {
-                // Agregar la sala encontrada a la tabla
-                modelo.addRow(new Object[]{
-                    sala.getId_sala(),
-                    sala.getNombre(),
-                    sala.getMesa()
-                });
-                encontrado = true;
+    private void btnCancelarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPlatoActionPerformed
+        // TODO add your handling code here:
+        LimpiarPlatos();
+    }//GEN-LAST:event_btnCancelarPlatoActionPerformed
+
+    private void btnGuardarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPlatoActionPerformed
+        // TODO add your handling code here:
+        // Validar que los campos no estén vacíos
+        if (!"".equals(txtNombrePlato.getText()) && !"".equals(txtPrecioPlato.getText()) && !"".equals(txtDescripcionPlato.getText())) {
+            try {
+                Producto producto = new Producto();
+                producto.setNom_producto(txtNombrePlato.getText());
+                producto.setPrecio(Double.parseDouble(txtPrecioPlato.getText()));
+                producto.setDescripcion(txtDescripcionPlato.getText());
+                producto.setTipoPlato(cbxTipoPlato.getSelectedItem().toString());
+
+                productoDAO productoDAO = new productoDAO();
+                if (productoDAO.registrar(producto)) {
+                    JOptionPane.showMessageDialog(null, "Plato registrado correctamente");
+                    LimpiarTable();
+                    ListarPlatos(TablePlatos); // Método para actualizar la tabla de platos
+                    LimpiarPlatos(); // Método para limpiar los campos del formulario
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al registrar el plato");
+                }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "El precio debe ser un número válido");
             }
-        }
-
-        // Mostrar mensaje si no se encontraron resultados
-        if (!encontrado) {
-            JOptionPane.showMessageDialog(null, "No se encontraron salas que coincidan con la búsqueda");
-        }
-    }//GEN-LAST:event_btnBuscarSalaActionPerformed
-
-    private void txtApellidosEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidosEmpleadoActionPerformed
-
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
-
-    private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        // TODO add your handling code here:
-        // Validar que los campos obligatorios no estén vacíos
-        if (txtNombre.getText().equals("") || txtApellidosEmpleado.getText().equals("")
-                || txtCorreo.getText().equals("") || txtCelularEmpleado.getText().equals("")
-                || txtDNIEmpleado.getText().equals("") || txtDireccionEmpleado.getText().equals("")
-                || txtPass.getPassword().length == 0) {
-
-            JOptionPane.showMessageDialog(null, "Todos los campos son requeridos");
         } else {
-            // Crear una instancia del modelo `login`
-            Login lg = new Login();
+            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+        }
+    }//GEN-LAST:event_btnGuardarPlatoActionPerformed
 
-            // Asignar los valores de los TextField y ComboBox a los atributos del objeto
-            lg.setNombre(txtNombre.getText());
-            lg.setApellido(txtApellidosEmpleado.getText());
-            lg.setCorreo(txtCorreo.getText());
-            lg.setCelular(Integer.parseInt(txtCelularEmpleado.getText()));
-            lg.setDni(Integer.parseInt(txtDNIEmpleado.getText()));
-            lg.setGenero(cbxGeneroEmpleado.getSelectedItem().toString());
-            lg.setDireccion(txtDireccionEmpleado.getText());
-            lg.setPass(String.valueOf(txtPass.getPassword()));
-            lg.setRol(cbxRol.getSelectedItem().toString());
+    private void TableUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableUsuariosMouseClicked
+        // TODO add your handling code here:
+        // Obtener la fila seleccionada en la tabla
+        int fila = TableUsuarios.rowAtPoint(evt.getPoint());
 
-            // Llamar al método `Registrar` de la clase DAO
-            boolean registrado = lgDao.Registrar(lg);
+        // Establecer los valores en los campos de texto correspondientes
+        txtIdEmpleado.setText(TableUsuarios.getValueAt(fila, 0).toString());
+        txtNombre.setText(TableUsuarios.getValueAt(fila, 1).toString());
+        txtApellidosEmpleado.setText(TableUsuarios.getValueAt(fila, 2).toString());
+        txtCorreo.setText(TableUsuarios.getValueAt(fila, 3).toString());
+        txtCelularEmpleado.setText(TableUsuarios.getValueAt(fila, 6).toString());
+        txtDNIEmpleado.setText(TableUsuarios.getValueAt(fila, 7).toString());
+        txtDireccionEmpleado.setText(TableUsuarios.getValueAt(fila, 9).toString());
 
-            // Validar si el registro fue exitoso
-            if (registrado) {
-                JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
-                LimpiarUsuario();
-                LimpiarTable();
-                ListarUsuarios();
+        // Establecer el valor seleccionado en el ComboBox de género
+        String genero = TableUsuarios.getValueAt(fila, 8).toString();
+        cbxGeneroEmpleado.setSelectedItem(genero);
+
+        // Establecer el valor en el campo de contraseña (opcional, depende de los requisitos de seguridad)
+        txtPass.setText(TableUsuarios.getValueAt(fila, 4).toString());
+
+        // Establecer el valor seleccionado en el ComboBox de rol
+        String rol = TableUsuarios.getValueAt(fila, 5).toString();
+        cbxRol.setSelectedItem(rol);
+    }//GEN-LAST:event_TableUsuariosMouseClicked
+
+    private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
+        // TODO add your handling code here:
+        // Verificar si el campo de ID está vacío
+        if ("".equals(txtIdEmpleado.getText())) {
+            JOptionPane.showMessageDialog(null, "Seleccione un registro para editar");
+        } else {
+            // Validar que los campos obligatorios no estén vacíos
+            if (!"".equals(txtNombre.getText()) && !"".equals(txtApellidosEmpleado.getText())
+                && !"".equals(txtCorreo.getText()) && !"".equals(txtCelularEmpleado.getText())
+                && !"".equals(txtDNIEmpleado.getText()) && !"".equals(txtDireccionEmpleado.getText())) {
+
+                // Mostrar ventana de confirmación
+                int respuesta = JOptionPane.showConfirmDialog(null,
+                    "¿Está seguro de que desea editar este registro?",
+                    "Confirmación de Edición",
+                    JOptionPane.YES_NO_OPTION);
+
+                // Si el usuario selecciona 'Sí'
+                if (respuesta == JOptionPane.YES_OPTION) {
+                    try {
+                        // Crear una nueva instancia de login (usuario)
+                        Login usuario = new Login();
+                        usuario.setId(Integer.parseInt(txtIdEmpleado.getText()));  // Establecer el ID del usuario
+                        usuario.setNombre(txtNombre.getText());
+                        usuario.setApellido(txtApellidosEmpleado.getText());
+                        usuario.setCorreo(txtCorreo.getText());
+                        usuario.setPass(txtPass.getText());  // Se asume que el campo de contraseña es opcional
+                        usuario.setRol(cbxRol.getSelectedItem().toString());
+                        usuario.setCelular(Integer.parseInt(txtCelularEmpleado.getText()));
+                        usuario.setDni(Integer.parseInt(txtDNIEmpleado.getText()));
+                        usuario.setGenero(cbxGeneroEmpleado.getSelectedItem().toString());
+                        usuario.setDireccion(txtDireccionEmpleado.getText());
+
+                        // Instanciar el DAO para editar el usuario
+                        loginDAO loginDAO = new loginDAO();
+                        if (loginDAO.EditarUsuario(usuario)) {
+                            JOptionPane.showMessageDialog(null, "Empleado editado correctamente");
+                            LimpiarTable();  // Método para limpiar la tabla y actualizarla
+                            ListarUsuarios(TableUsuarios);  // Método para actualizar la tabla con la lista de usuarios
+                            LimpiarUsuario();  // Método para limpiar los campos del formulario
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error al editar el empleado");
+                        }
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "Verifique que los campos numéricos sean correctos");
+                    }
+                } else {
+                    // Si el usuario selecciona 'No', no se hace nada
+                    JOptionPane.showMessageDialog(null, "Edición cancelada");
+                }
+
             } else {
-                JOptionPane.showMessageDialog(null, "Error al registrar usuario");
+                JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
             }
         }
-    }//GEN-LAST:event_btnIniciarActionPerformed
+    }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
 
-    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+    private void btnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCorreoActionPerformed
-
-    private void txtCelularEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCelularEmpleadoActionPerformed
-
-    private void txtDNIEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDNIEmpleadoActionPerformed
-
-    private void txtDireccionEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionEmpleadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDireccionEmpleadoActionPerformed
-
-    private void btnExportar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportar3ActionPerformed
-        // TODO add your handling code here:
-        ExportarExcel obj;
-
-        try {
-            obj = new ExportarExcel();
-            obj.exportarExcel(TableUsuarios);
-        } catch (IOException ex) {
-            System.out.println("Error: " + ex);
+        // Verificar si el ID está vacío
+        if (!"".equals(txtIdEmpleado.getText())) {  // Asegúrate de que txtIdEmpleado sea el campo donde se ingresa el ID del usuario
+            // Confirmar si el usuario desea eliminar el registro
+            int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este empleado?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
+            if (pregunta == JOptionPane.YES_OPTION) {
+                try {
+                    int id = Integer.parseInt(txtIdEmpleado.getText()); // Convertir el ID a entero
+                    loginDAO loginDao = new loginDAO(); // Usar el DAO para eliminar el usuario
+                    if (loginDao.EliminarUsuario(id)) {
+                        JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente");
+                        LimpiarUsuario(); // Método para limpiar los campos del formulario
+                        LimpiarTable(); // Método para limpiar la tabla
+                        ListarUsuarios(TableUsuarios); // Método para actualizar la tabla con los datos actuales
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error al eliminar el usuario");
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "El ID debe ser un número válido");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
         }
-    }//GEN-LAST:event_btnExportar3ActionPerformed
 
-    private void btnCancelarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEmpleadoActionPerformed
-        // TODO add your handling code here:
-        LimpiarUsuario();
-    }//GEN-LAST:event_btnCancelarEmpleadoActionPerformed
-
-    private void txtBuscadorEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorEmpleadosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscadorEmpleadosActionPerformed
+    }//GEN-LAST:event_btnEliminarEmpleadoActionPerformed
 
     private void btnBuscarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEmpleadoActionPerformed
         // TODO add your handling code here:
@@ -1961,296 +2038,459 @@ public class frmPolleria extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBuscarEmpleadoActionPerformed
 
-    private void btnEliminarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarEmpleadoActionPerformed
+    private void txtBuscadorEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorEmpleadosActionPerformed
         // TODO add your handling code here:
-        // Verificar si el ID está vacío
-        if (!"".equals(txtIdEmpleado.getText())) {  // Asegúrate de que txtIdEmpleado sea el campo donde se ingresa el ID del usuario
-            // Confirmar si el usuario desea eliminar el registro
-            int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este empleado?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
-            if (pregunta == JOptionPane.YES_OPTION) {
-                try {
-                    int id = Integer.parseInt(txtIdEmpleado.getText()); // Convertir el ID a entero
-                    loginDAO loginDao = new loginDAO(); // Usar el DAO para eliminar el usuario
-                    if (loginDao.EliminarUsuario(id)) {
-                        JOptionPane.showMessageDialog(null, "Usuario eliminado correctamente");
-                        LimpiarUsuario(); // Método para limpiar los campos del formulario
-                        LimpiarTable(); // Método para limpiar la tabla
-                        ListarUsuarios(TableUsuarios); // Método para actualizar la tabla con los datos actuales
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Error al eliminar el usuario");
-                    }
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "El ID debe ser un número válido");
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
+    }//GEN-LAST:event_txtBuscadorEmpleadosActionPerformed
+
+    private void btnExportar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportar3ActionPerformed
+        // TODO add your handling code here:
+        ExportarExcel obj;
+
+        try {
+            obj = new ExportarExcel();
+            obj.exportarExcel(TableUsuarios);
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
         }
-       
-    }//GEN-LAST:event_btnEliminarEmpleadoActionPerformed
+    }//GEN-LAST:event_btnExportar3ActionPerformed
 
-    private void btnEditarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmpleadoActionPerformed
+    private void btnCancelarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarEmpleadoActionPerformed
         // TODO add your handling code here:
-        // Verificar si el campo de ID está vacío
-        if ("".equals(txtIdEmpleado.getText())) {
-            JOptionPane.showMessageDialog(null, "Seleccione un registro para editar");
+        LimpiarUsuario();
+    }//GEN-LAST:event_btnCancelarEmpleadoActionPerformed
+
+    private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPassActionPerformed
+
+    private void txtDireccionEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDireccionEmpleadoActionPerformed
+
+    private void txtDNIEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDNIEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDNIEmpleadoActionPerformed
+
+    private void txtCelularEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCelularEmpleadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCelularEmpleadoActionPerformed
+
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
+        // TODO add your handling code here:
+        // Validar que los campos obligatorios no estén vacíos
+        if (txtNombre.getText().equals("") || txtApellidosEmpleado.getText().equals("")
+            || txtCorreo.getText().equals("") || txtCelularEmpleado.getText().equals("")
+            || txtDNIEmpleado.getText().equals("") || txtDireccionEmpleado.getText().equals("")
+            || txtPass.getPassword().length == 0) {
+
+            JOptionPane.showMessageDialog(null, "Todos los campos son requeridos");
         } else {
-            // Validar que los campos obligatorios no estén vacíos
-            if (!"".equals(txtNombre.getText()) && !"".equals(txtApellidosEmpleado.getText())
-                    && !"".equals(txtCorreo.getText()) && !"".equals(txtCelularEmpleado.getText())
-                    && !"".equals(txtDNIEmpleado.getText()) && !"".equals(txtDireccionEmpleado.getText())) {
+            // Crear una instancia del modelo `login`
+            Login lg = new Login();
 
-                // Mostrar ventana de confirmación
-                int respuesta = JOptionPane.showConfirmDialog(null,
-                        "¿Está seguro de que desea editar este registro?",
-                        "Confirmación de Edición",
-                        JOptionPane.YES_NO_OPTION);
+            // Asignar los valores de los TextField y ComboBox a los atributos del objeto
+            lg.setNombre(txtNombre.getText());
+            lg.setApellido(txtApellidosEmpleado.getText());
+            lg.setCorreo(txtCorreo.getText());
+            lg.setCelular(Integer.parseInt(txtCelularEmpleado.getText()));
+            lg.setDni(Integer.parseInt(txtDNIEmpleado.getText()));
+            lg.setGenero(cbxGeneroEmpleado.getSelectedItem().toString());
+            lg.setDireccion(txtDireccionEmpleado.getText());
+            lg.setPass(String.valueOf(txtPass.getPassword()));
+            lg.setRol(cbxRol.getSelectedItem().toString());
 
-                // Si el usuario selecciona 'Sí'
-                if (respuesta == JOptionPane.YES_OPTION) {
-                    try {
-                        // Crear una nueva instancia de login (usuario)
-                        Login usuario = new Login();
-                        usuario.setId(Integer.parseInt(txtIdEmpleado.getText()));  // Establecer el ID del usuario
-                        usuario.setNombre(txtNombre.getText());
-                        usuario.setApellido(txtApellidosEmpleado.getText());
-                        usuario.setCorreo(txtCorreo.getText());
-                        usuario.setPass(txtPass.getText());  // Se asume que el campo de contraseña es opcional
-                        usuario.setRol(cbxRol.getSelectedItem().toString());
-                        usuario.setCelular(Integer.parseInt(txtCelularEmpleado.getText()));
-                        usuario.setDni(Integer.parseInt(txtDNIEmpleado.getText()));
-                        usuario.setGenero(cbxGeneroEmpleado.getSelectedItem().toString());
-                        usuario.setDireccion(txtDireccionEmpleado.getText());
+            // Llamar al método `Registrar` de la clase DAO
+            boolean registrado = lgDao.Registrar(lg);
 
-                        // Instanciar el DAO para editar el usuario
-                        loginDAO loginDAO = new loginDAO();
-                        if (loginDAO.EditarUsuario(usuario)) {
-                            JOptionPane.showMessageDialog(null, "Empleado editado correctamente");
-                            LimpiarTable();  // Método para limpiar la tabla y actualizarla
-                            ListarUsuarios(TableUsuarios);  // Método para actualizar la tabla con la lista de usuarios
-                            LimpiarUsuario();  // Método para limpiar los campos del formulario
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Error al editar el empleado");
-                        }
-                    } catch (NumberFormatException ex) {
-                        JOptionPane.showMessageDialog(null, "Verifique que los campos numéricos sean correctos");
-                    }
-                } else {
-                    // Si el usuario selecciona 'No', no se hace nada
-                    JOptionPane.showMessageDialog(null, "Edición cancelada");
-                }
-
+            // Validar si el registro fue exitoso
+            if (registrado) {
+                JOptionPane.showMessageDialog(null, "Usuario registrado exitosamente");
+                LimpiarUsuario();
+                LimpiarTable();
+                ListarUsuarios();
             } else {
-                JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+                JOptionPane.showMessageDialog(null, "Error al registrar usuario");
             }
         }
-    }//GEN-LAST:event_btnEditarEmpleadoActionPerformed
+    }//GEN-LAST:event_btnIniciarActionPerformed
 
-    private void btnGuardarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPlatoActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-        // Validar que los campos no estén vacíos
-        if (!"".equals(txtNombrePlato.getText()) && !"".equals(txtPrecioPlato.getText()) && !"".equals(txtDescripcionPlato.getText())) {
-            try {
-                Producto producto = new Producto();
-                producto.setNom_producto(txtNombrePlato.getText());
-                producto.setPrecio(Double.parseDouble(txtPrecioPlato.getText()));
-                producto.setDescripcion(txtDescripcionPlato.getText());
-                producto.setTipoPlato(cbxTipoPlato.getSelectedItem().toString());
+    }//GEN-LAST:event_txtNombreActionPerformed
 
-                productoDAO productoDAO = new productoDAO();
-                if (productoDAO.registrar(producto)) {
-                    JOptionPane.showMessageDialog(null, "Plato registrado correctamente");
-                    LimpiarTable();
-                    ListarPlatos(TablePlatos); // Método para actualizar la tabla de platos
-                    LimpiarPlatos(); // Método para limpiar los campos del formulario
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error al registrar el plato");
-                }
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "El precio debe ser un número válido");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
-        }
-    }//GEN-LAST:event_btnGuardarPlatoActionPerformed
-
-    private void btnCancelarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarPlatoActionPerformed
+    private void txtApellidosEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosEmpleadoActionPerformed
         // TODO add your handling code here:
-        LimpiarPlatos();
-    }//GEN-LAST:event_btnCancelarPlatoActionPerformed
+    }//GEN-LAST:event_txtApellidosEmpleadoActionPerformed
 
-    private void txtNombrePlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePlatoActionPerformed
+    private void txtBuscadorSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorSalaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombrePlatoActionPerformed
-
-    private void txtPrecioPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioPlatoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrecioPlatoActionPerformed
-
-    private void txtDescripcionPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripcionPlatoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescripcionPlatoActionPerformed
-
-    private void txtBuscadorPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorPlatoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscadorPlatoActionPerformed
-
-    private void btnBuscarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPlatoActionPerformed
-        // TODO add your handling code here:
-         // Obtener el texto del campo de búsqueda
-        String busqueda = txtBuscadorPlato.getText().trim();
+        // Obtener el texto del campo de búsqueda
+        String busqueda = txtBuscadorSala.getText().trim();
 
         // Verificar si el campo está vacío
         if (busqueda.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Ingrese el nombre del plato que desea buscar");
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre de la sala que desea buscar");
             return;
         }
 
         // Obtener el modelo de la tabla
-        DefaultTableModel modelo = (DefaultTableModel) TablePlatos.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) tableSala.getModel();
         // Limpiar la tabla antes de mostrar resultados
         modelo.setRowCount(0);
 
-        // Consultar la base de datos para buscar los platos
-        productoDAO productoDAO = new productoDAO(); // Crear una instancia de ProductoDAO
-        List<Producto> platos = productoDAO.listar(busqueda); // Buscar platos con el nombre que contiene la búsqueda
+        // Consultar la base de datos para buscar las salas
+        List<Sala> salas = slDao.listarSalas(); // Recuperar todas las salas
         boolean encontrado = false;
 
-        // Recorrer la lista de platos para agregar aquellos que coinciden con la búsqueda
-        for (Producto plato : platos) {
-            modelo.addRow(new Object[]{
-                plato.getId_producto(),
-                plato.getNom_producto(),
-                plato.getTipoPlato(),
-                plato.getPrecio(),
-                plato.getDescripcion()
-            });
-            encontrado = true;
+        for (Sala sala : salas) {
+            if (sala.getNombre().toLowerCase().contains(busqueda.toLowerCase())) {
+                // Agregar la sala encontrada a la tabla
+                modelo.addRow(new Object[]{
+                    sala.getId_sala(),
+                    sala.getNombre(),
+                    sala.getMesa()
+                });
+                encontrado = true;
+            }
         }
 
         // Mostrar mensaje si no se encontraron resultados
         if (!encontrado) {
-            JOptionPane.showMessageDialog(null, "No se encontraron platos que coincidan con la búsqueda");
+            JOptionPane.showMessageDialog(null, "No se encontraron salas que coincidan con la búsqueda");
         }
-    }//GEN-LAST:event_btnBuscarPlatoActionPerformed
+    }//GEN-LAST:event_txtBuscadorSalaActionPerformed
 
-    private void btnEditarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPlatoActionPerformed
+    private void btnCancelarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarSalaActionPerformed
         // TODO add your handling code here:
-        // Verificar si el ID está vacío
-        if ("".equals(txtIdPlato.getText())) {
-            JOptionPane.showMessageDialog(null, "Seleccione una fila para editar");
-        } else {
-            // Validar que los campos obligatorios no estén vacíos
-            if (!"".equals(txtNombrePlato.getText()) && !"".equals(txtPrecioPlato.getText()) && !"".equals(txtDescripcionPlato.getText())) {
+        LimpiarSala();
+    }//GEN-LAST:event_btnCancelarSalaActionPerformed
 
+    private void btnRegistrarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarSalaActionPerformed
+        // TODO add your handling code here:
+        if (txtNombreSala.getText().equals("") || txtMesas.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Los campos esta vacios");
+        } else {
+            sl.setNombre(txtNombreSala.getText());
+            sl.setMesa(Integer.parseInt(txtMesas.getText()));
+            slDao.registrarSala(sl);
+            JOptionPane.showMessageDialog(null, "Sala Registrado");
+            LimpiarSala();
+            LimpiarTable();
+            ListarSalas();
+        }
+    }//GEN-LAST:event_btnRegistrarSalaActionPerformed
+
+    private void txtNombreSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreSalaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreSalaActionPerformed
+
+    private void txtMesasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMesasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMesasActionPerformed
+
+    private void btnActualizarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarSalaActionPerformed
+        // TODO add your handling code here:
+        // Validar si se seleccionó una fila
+        if ("".equals(txtIdSala.getText())) {
+            JOptionPane.showMessageDialog(null, "Seleccione una fila");
+        } else {
+            // Validar si el nombre de la sala no está vacío
+            if (!"".equals(txtNombreSala.getText()) && !"".equals(txtMesas.getText())) {
                 // Mostrar ventana de confirmación
                 int respuesta = JOptionPane.showConfirmDialog(null,
-                        "¿Está seguro de que desea editar este plato?",
-                        "Confirmación de Edición",
-                        JOptionPane.YES_NO_OPTION);
+                    "¿Está seguro de que desea actualizar esta sala?",
+                    "Confirmación de Actualización",
+                    JOptionPane.YES_NO_OPTION);
 
                 // Si el usuario selecciona 'Sí'
                 if (respuesta == JOptionPane.YES_OPTION) {
                     try {
-                        Producto producto = new Producto();
-                        producto.setId_producto(Integer.parseInt(txtIdPlato.getText()));
-                        producto.setNom_producto(txtNombrePlato.getText());
-                        producto.setPrecio(Double.parseDouble(txtPrecioPlato.getText()));
-                        producto.setDescripcion(txtDescripcionPlato.getText());
-                        producto.setTipoPlato(cbxTipoPlato.getSelectedItem().toString());
+                        // Asignar valores al objeto Sala
+                        sl.setId_sala(Integer.parseInt(txtIdSala.getText()));
+                        sl.setNombre(txtNombreSala.getText());
+                        sl.setMesa(Integer.parseInt(txtMesas.getText())); // Asegúrate de convertir el texto a un entero
 
-                        productoDAO productoDAO = new productoDAO();
-                        if (productoDAO.modificar(producto)) {
-                            JOptionPane.showMessageDialog(null, "Plato modificado correctamente");
+                        // Llamar al DAO para actualizar la sala
+                        if (slDao.modificarSala(sl)) {
+                            JOptionPane.showMessageDialog(null, "Sala modificada correctamente");
+                            LimpiarSala();
                             LimpiarTable();
-                            ListarPlatos(TablePlatos); // Método para actualizar la tabla
-                            LimpiarPlatos(); // Método para limpiar los campos del formulario
+                            ListarSalas();
                         } else {
-                            JOptionPane.showMessageDialog(null, "Error al modificar el plato");
+                            JOptionPane.showMessageDialog(null, "Error al modificar la sala");
                         }
-                    } catch (NumberFormatException ex) {
-                        JOptionPane.showMessageDialog(null, "El precio debe ser un número válido");
+                    } catch (NumberFormatException e) {
+                        // Capturar posibles errores de conversión de texto a entero
+                        JOptionPane.showMessageDialog(null, "El campo 'Mesas' debe ser un número válido");
                     }
                 } else {
                     // Si el usuario selecciona 'No', no se hace nada
-                    JOptionPane.showMessageDialog(null, "Edición cancelada");
+                    JOptionPane.showMessageDialog(null, "Actualización cancelada");
                 }
 
             } else {
-                JOptionPane.showMessageDialog(null, "Por favor, complete todos los campos");
+                JOptionPane.showMessageDialog(null, "Complete todos los campos");
             }
         }
-    }//GEN-LAST:event_btnEditarPlatoActionPerformed
+    }//GEN-LAST:event_btnActualizarSalaActionPerformed
 
-    private void btnEliminarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPlatoActionPerformed
+    private void btnEliminarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarSalaActionPerformed
         // TODO add your handling code here:
-        // Verificar si el ID está vacío
-        if (!"".equals(txtIdPlato.getText())) {
-            // Confirmar si el usuario desea eliminar el registro
-            int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro de eliminar este plato?", "Confirmar eliminación", JOptionPane.YES_NO_OPTION);
-            if (pregunta == JOptionPane.YES_OPTION) {
-                try {
-                    int id = Integer.parseInt(txtIdPlato.getText()); // Convertir el ID a entero
-                    productoDAO productoDAO = new productoDAO();
-                    if (productoDAO.eliminar(id)) {
-                        JOptionPane.showMessageDialog(null, "Plato eliminado correctamente");
-                        LimpiarPlatos(); // Método para limpiar los campos del formulario
-                        LimpiarTable(); // Método para limpiar la tabla
-                        ListarPlatos(TablePlatos); // Método para actualizar la tabla con los datos actuales
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Error al eliminar el plato");
-                    }
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "El ID debe ser un número válido");
-                }
+        if (!"".equals(txtIdSala.getText())) {
+            int pregunta = JOptionPane.showConfirmDialog(null, "Esta seguro de eliminar");
+            if (pregunta == 0) {
+                int id = Integer.parseInt(txtIdSala.getText());
+                slDao.eliminarSala(id);
+                LimpiarSala();
+                LimpiarTable();
+                ListarSalas();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Seleccione una fila para eliminar");
+            JOptionPane.showMessageDialog(null, "Seleccione una fila");
         }
-    }//GEN-LAST:event_btnEliminarPlatoActionPerformed
+    }//GEN-LAST:event_btnEliminarSalaActionPerformed
 
-    private void btnCambiarEstadoDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarEstadoDetalleActionPerformed
+    private void btnBuscarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarSalaActionPerformed
         // TODO add your handling code here:
-        // Verifica si se seleccionó una fila
-        int filaSeleccionada = tableConfirmacionPedidos.getSelectedRow();
-        if (filaSeleccionada == -1) {
-            JOptionPane.showMessageDialog(null, "Por favor, seleccione un registro de la tabla.");
+        String busqueda = txtBuscadorSala.getText().trim();
+
+        // Verificar si el campo está vacío
+        if (busqueda.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Ingrese el nombre de la sala que desea buscar");
             return;
         }
 
-        // Obtén el ID del detalle desde la columna correspondiente
-        int idDetalle = Integer.parseInt(tableConfirmacionPedidos.getValueAt(filaSeleccionada, 0).toString());
+        // Obtener el modelo de la tabla
+        DefaultTableModel modelo = (DefaultTableModel) tableSala.getModel();
+        // Limpiar la tabla antes de mostrar resultados
+        modelo.setRowCount(0);
 
-        // Cambiar el estado del detalle
-        boolean resultado = pedDao.cambiarEstadoDetalle(idDetalle, "REALIZADO");
-        if (resultado) {
-            JOptionPane.showMessageDialog(null, "Estado cambiado a 'REALIZADO'");
-            actualizarTablaDetalles(); // Método opcional para refrescar la tabla
+        // Consultar la base de datos para buscar las salas
+        List<Sala> salas = slDao.listarSalas(); // Recuperar todas las salas
+        boolean encontrado = false;
 
+        for (Sala sala : salas) {
+            if (sala.getNombre().toLowerCase().contains(busqueda.toLowerCase())) {
+                // Agregar la sala encontrada a la tabla
+                modelo.addRow(new Object[]{
+                    sala.getId_sala(),
+                    sala.getNombre(),
+                    sala.getMesa()
+                });
+                encontrado = true;
+            }
+        }
+
+        // Mostrar mensaje si no se encontraron resultados
+        if (!encontrado) {
+            JOptionPane.showMessageDialog(null, "No se encontraron salas que coincidan con la búsqueda");
+        }
+    }//GEN-LAST:event_btnBuscarSalaActionPerformed
+
+    private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane2MouseClicked
+
+    private void tableSalaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSalaMouseClicked
+        // TODO add your handling code here:
+        int fila = tableSala.rowAtPoint(evt.getPoint());
+        txtIdSala.setText(tableSala.getValueAt(fila, 0).toString());
+        txtNombreSala.setText(tableSala.getValueAt(fila, 1).toString());
+        txtMesas.setText(tableSala.getValueAt(fila, 2).toString());
+    }//GEN-LAST:event_tableSalaMouseClicked
+
+    private void btnPestañaHistorialPedidosVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaHistorialPedidosVentasActionPerformed
+        // TODO add your handling code here:
+        LimpiarTable();
+        ListarPedidos();
+        jTabbedPane1.setSelectedIndex(8);
+    }//GEN-LAST:event_btnPestañaHistorialPedidosVentasActionPerformed
+
+    private void btnPestañaEstadoPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaEstadoPedidoActionPerformed
+        // TODO add your handling code here:
+        LimpiarTable();
+        ListarDetallesPedido();
+        jTabbedPane1.setSelectedIndex(6);
+    }//GEN-LAST:event_btnPestañaEstadoPedidoActionPerformed
+
+    private void btnPestañaSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaSalasActionPerformed
+        LimpiarTable();
+        ListarSalas();
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnPestañaSalasActionPerformed
+
+    private void btnPestañaRegistroPlatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPestañaRegistroPlatosActionPerformed
+        LimpiarTable();
+        ListarPlatos(TablePlatos);
+        jTabbedPane1.setSelectedIndex(4);
+    }//GEN-LAST:event_btnPestañaRegistroPlatosActionPerformed
+
+    private void btnUsuarios4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarios4ActionPerformed
+        // TODO add your handling code here:
+        LimpiarTable();
+        ListarUsuarios();
+        jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_btnUsuarios4ActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        int confirm = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que deseas salir?", "Confirmar salida", JOptionPane.YES_NO_OPTION);
+
+        // Si el usuario selecciona "Sí" (JOptionPane.YES_OPTION), salir del programa
+        if (confirm == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void labelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoMouseClicked
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(0);
+        PanelSalas.removeAll();
+        panelSalas();
+    }//GEN-LAST:event_labelLogoMouseClicked
+
+    private void tableMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMenuMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableMenuMouseClicked
+
+    private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
+        // TODO add your handling code here:
+        if (tableMenu.getRowCount() > 0) {
+            RegistrarPedido();
+            detallePedido();
+            LimpiarTableMenu();
+            JOptionPane.showMessageDialog(null, "PEDIDO REGISTRADO");
+            jTabbedPane1.setSelectedIndex(0);
         } else {
-            JOptionPane.showMessageDialog(null, "Error al cambiar el estado");
+            JOptionPane.showMessageDialog(null, "NO HAY PRODUCTO EN LA PEDIDO");
         }
-    }//GEN-LAST:event_btnCambiarEstadoDetalleActionPerformed
+    }//GEN-LAST:event_btnGenerarPedidoActionPerformed
 
-    private void txtIdDetalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdDetalleActionPerformed
+    private void btnEliminarTempPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTempPlatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdDetalleActionPerformed
+        txtComentario.setText("");
+    }//GEN-LAST:event_btnEliminarTempPlatoActionPerformed
 
-    private void btnExportar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportar2ActionPerformed
+    private void btnAgregarComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComentarioActionPerformed
         // TODO add your handling code here:
-        ExportarExcel obj;
-        
-        try{
-            obj = new ExportarExcel();
-            obj.exportarExcel(tableConfirmacionPedidos);
-        } catch (IOException ex){
-            System.out.println("Error: " + ex);
+        // Verificar que se haya ingresado un comentario
+        if (txtComentario.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese un comentario.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return; // Salir del método si no se ingresa un comentario
         }
-    }//GEN-LAST:event_btnExportar2ActionPerformed
 
-    private void txtBuscadorConfirmacionPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscadorConfirmacionPedidoActionPerformed
+        // Verificar si se ha seleccionado una fila en la tabla
+        int selectedRow = tableMenu.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila de la tabla.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            return; // Salir del método si no hay fila seleccionada
+        }
+
+        try {
+            // Obtener el ID de la fila seleccionada
+            int id = Integer.parseInt(tableMenu.getValueAt(selectedRow, 0).toString());
+
+            // Recorrer la tabla para buscar la fila con el ID correspondiente
+            for (int i = 0; i < tableMenu.getRowCount(); i++) {
+                if (Integer.parseInt(tableMenu.getValueAt(i, 0).toString()) == id) {
+                    // Actualizar el comentario en la columna correspondiente
+                    tableMenu.setValueAt(txtComentario.getText().trim(), i, 6);
+
+                    // Limpiar el campo de texto y la selección de la tabla
+                    txtComentario.setText("");
+                    tableMenu.clearSelection();
+
+                    // Mostrar mensaje de confirmación
+                    JOptionPane.showMessageDialog(null, "Comentario agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                    return; // Salir del método después de actualizar
+                }
+            }
+
+            // Mostrar mensaje si no se encuentra el ID en la tabla
+            JOptionPane.showMessageDialog(null, "El ID seleccionado no coincide con ninguna fila.", "Error", JOptionPane.ERROR_MESSAGE);
+
+        } catch (NumberFormatException e) {
+            // Manejar errores al convertir valores a enteros
+            JOptionPane.showMessageDialog(null, "Error al procesar el ID de la fila seleccionada.", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {
+            // Manejar cualquier otro error inesperado
+            JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarComentarioActionPerformed
+
+    private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscadorConfirmacionPedidoActionPerformed
+        int selectedRow = tableMenu.getSelectedRow();
+
+        if (selectedRow >= 0) {  // Si se ha seleccionado una fila
+            int id = Integer.parseInt(tableMenu.getValueAt(selectedRow, 0).toString());
+            double precio = Double.parseDouble(tableMenu.getValueAt(selectedRow, 4).toString()); // Precio unitario
+            int cantidadActual = Integer.parseInt(tableMenu.getValueAt(selectedRow, 3).toString()); // Cantidad actual
+
+            // Si la cantidad es mayor a 1, reducir la cantidad en 1
+            if (cantidadActual > 1) {
+                int nuevaCantidad = cantidadActual - 1; // Nueva cantidad después de restar 1
+                double nuevoSubtotal = nuevaCantidad * precio; // Nuevo subtotal
+
+                // Actualiza la cantidad y el subtotal en la tabla
+                tableMenu.setValueAt(nuevaCantidad, selectedRow, 3); // Actualiza cantidad (columna 3)
+                tableMenu.setValueAt(nuevoSubtotal, selectedRow, 5);  // Actualiza subtotal (columna 5)
+
+                // Actualiza el total a pagar después de modificar
+                TotalPagar(tableMenu, totalMenu);
+            } else {
+                // Si la cantidad es 1, no puedes reducirla más
+                JOptionPane.showMessageDialog(null, "La cantidad no puede ser menor a 1.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } else {
+            // Si no se ha seleccionado ninguna fila, mostrar un mensaje
+            JOptionPane.showMessageDialog(null, "Por favor, selecciona un registro para restar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_RestarActionPerformed
+
+    private void txtTempNumMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTempNumMesaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTempNumMesaActionPerformed
+
+    private void txtTempIdSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTempIdSalaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTempIdSalaActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        // TODO add your handling code here:
+        // Obtiene el modelo de la tabla
+        modelo = (DefaultTableModel) tableMenu.getModel();
+
+        // Verifica si se ha seleccionado alguna fila
+        int selectedRow = tableMenu.getSelectedRow();
+
+        if (selectedRow != -1) { // Si se ha seleccionado una fila
+            // Obtiene la cantidad actual del plato seleccionado
+            int cantidad = Integer.parseInt(tableMenu.getValueAt(selectedRow, 3).toString());
+
+            // Muestra un cuadro de diálogo preguntando si desea eliminar la fila seleccionada
+            int opcion = JOptionPane.showConfirmDialog(null,
+                "¿Deseas eliminar esta cantidad de este plato? (Cantidad: " + cantidad + ")",
+                "Eliminar Plato",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE);
+
+            if (opcion == JOptionPane.YES_OPTION) {
+                // Si selecciona "Sí", elimina la fila seleccionada
+                modelo.removeRow(selectedRow);
+                // Actualiza el total después de la eliminación
+                TotalPagar(tableMenu, totalMenu);
+            }
+            // Si selecciona "No", no se hace nada y la fila no se elimina
+        } else {
+            // Si no se ha seleccionado ninguna fila, muestra un mensaje de advertencia
+            JOptionPane.showMessageDialog(null, "Por favor, seleccione un registro para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_EliminarActionPerformed
 
     private void btnAñadirPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirPlatoActionPerformed
         // TODO add your handling code here:
@@ -2300,283 +2540,9 @@ public class frmPolleria extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAñadirPlatoActionPerformed
 
-    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        // TODO add your handling code here:
-        // Obtiene el modelo de la tabla
-        modelo = (DefaultTableModel) tableMenu.getModel();
-
-        // Verifica si se ha seleccionado alguna fila
-        int selectedRow = tableMenu.getSelectedRow();
-
-        if (selectedRow != -1) { // Si se ha seleccionado una fila
-            // Obtiene la cantidad actual del plato seleccionado
-            int cantidad = Integer.parseInt(tableMenu.getValueAt(selectedRow, 3).toString());
-
-            // Muestra un cuadro de diálogo preguntando si desea eliminar la fila seleccionada
-            int opcion = JOptionPane.showConfirmDialog(null,
-                    "¿Deseas eliminar esta cantidad de este plato? (Cantidad: " + cantidad + ")",
-                    "Eliminar Plato",
-                    JOptionPane.YES_NO_OPTION,
-                    JOptionPane.QUESTION_MESSAGE);
-
-            if (opcion == JOptionPane.YES_OPTION) {
-                // Si selecciona "Sí", elimina la fila seleccionada
-                modelo.removeRow(selectedRow);
-                // Actualiza el total después de la eliminación
-                TotalPagar(tableMenu, totalMenu);
-            }
-            // Si selecciona "No", no se hace nada y la fila no se elimina
-        } else {
-            // Si no se ha seleccionado ninguna fila, muestra un mensaje de advertencia
-            JOptionPane.showMessageDialog(null, "Por favor, seleccione un registro para eliminar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_EliminarActionPerformed
-
-    private void txtTempIdSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTempIdSalaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTempIdSalaActionPerformed
-
     private void txtBuscarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarPlatoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarPlatoActionPerformed
-
-    private void txtTempNumMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTempNumMesaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTempNumMesaActionPerformed
-
-    private void btnAgregarComentarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComentarioActionPerformed
-        // TODO add your handling code here:
-        // Verificar que se haya ingresado un comentario
-        if (txtComentario.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por favor, ingrese un comentario.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            return; // Salir del método si no se ingresa un comentario
-        }
-
-        // Verificar si se ha seleccionado una fila en la tabla
-        int selectedRow = tableMenu.getSelectedRow();
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Por favor, seleccione una fila de la tabla.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            return; // Salir del método si no hay fila seleccionada
-        }
-
-        try {
-            // Obtener el ID de la fila seleccionada
-            int id = Integer.parseInt(tableMenu.getValueAt(selectedRow, 0).toString());
-
-            // Recorrer la tabla para buscar la fila con el ID correspondiente
-            for (int i = 0; i < tableMenu.getRowCount(); i++) {
-                if (Integer.parseInt(tableMenu.getValueAt(i, 0).toString()) == id) {
-                    // Actualizar el comentario en la columna correspondiente
-                    tableMenu.setValueAt(txtComentario.getText().trim(), i, 6);
-
-                    // Limpiar el campo de texto y la selección de la tabla
-                    txtComentario.setText("");
-                    tableMenu.clearSelection();
-
-                    // Mostrar mensaje de confirmación
-                    JOptionPane.showMessageDialog(null, "Comentario agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                    return; // Salir del método después de actualizar
-                }
-            }
-
-            // Mostrar mensaje si no se encuentra el ID en la tabla
-            JOptionPane.showMessageDialog(null, "El ID seleccionado no coincide con ninguna fila.", "Error", JOptionPane.ERROR_MESSAGE);
-
-        } catch (NumberFormatException e) {
-            // Manejar errores al convertir valores a enteros
-            JOptionPane.showMessageDialog(null, "Error al procesar el ID de la fila seleccionada.", "Error", JOptionPane.ERROR_MESSAGE);
-        } catch (Exception e) {
-            // Manejar cualquier otro error inesperado
-            JOptionPane.showMessageDialog(null, "Ocurrió un error inesperado: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
-
-    }//GEN-LAST:event_btnAgregarComentarioActionPerformed
-
-    private void btnEliminarTempPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarTempPlatoActionPerformed
-        // TODO add your handling code here:
-        txtComentario.setText("");
-        
-    }//GEN-LAST:event_btnEliminarTempPlatoActionPerformed
-
-    private void btnGenerarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPedidoActionPerformed
-        // TODO add your handling code here:
-        if (tableMenu.getRowCount() > 0) {
-            RegistrarPedido();
-            detallePedido();
-            LimpiarTableMenu();
-            JOptionPane.showMessageDialog(null, "PEDIDO REGISTRADO");
-            jTabbedPane1.setSelectedIndex(0);
-        } else {
-            JOptionPane.showMessageDialog(null, "NO HAY PRODUCTO EN LA PEDIDO");
-        }
-    }//GEN-LAST:event_btnGenerarPedidoActionPerformed
-
-    private void txtFechaHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaHoraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaHoraActionPerformed
-
-    private void txtSalaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalaFinalizarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSalaFinalizarActionPerformed
-
-    private void txtNumMesaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumMesaFinalizarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumMesaFinalizarActionPerformed
-
-    private void txtIdPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdPedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdPedidoActionPerformed
-
-    private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
-        // TODO add your handling code here:
-        // Obtiene el ID del pedido desde el campo de texto
-        int idPedido = Integer.parseInt(txtIdPedido.getText().trim());
-
-        // Crea una instancia de tu DAO para poder llamar a los métodos
-        //PedidoDAO pedDao = new PedidoDAO();
-        // Verifica si todos los detalles del pedido están en "REALIZADO"
-        if (pedDao.verificarDetallesRealizados(idPedido)) {
-            // Si todos los detalles están realizados, pregunta si se desea finalizar
-            int pregunta = JOptionPane.showConfirmDialog(null, "¿Está seguro de finalizar el pedido?");
-            if (pregunta == 0) {
-                // Si la respuesta es afirmativa, actualiza el estado del pedido
-                if (pedDao.actualizarEstado(idPedido)) {
-                    // Si el estado se actualizó correctamente, genera el PDF
-
-                    JOptionPane.showMessageDialog(null, "Pedido finalizado", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error al finalizar el pedido", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        } else {
-            // Si no todos los detalles están en "REALIZADO", muestra un mensaje de error
-            JOptionPane.showMessageDialog(null, "No se puede finalizar el pedido. Todos los detalles deben estar en estado 'REALIZADO'", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnFinalizarActionPerformed
-
-    private void TablePedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePedidosMouseClicked
-        // TODO add your handling code here:
-        int fila = TablePedidos.rowAtPoint(evt.getPoint());
-        int id_pedido = Integer.parseInt(TablePedidos.getValueAt(fila, 0).toString());
-        LimpiarTable();
-        verPedido(id_pedido);
-        verPedidoDetalle(id_pedido);
-        jTabbedPane1.setSelectedIndex(7);
-        btnFinalizar.setEnabled(false);
-        txtIdHistorialPedido.setText("" + id_pedido);
-    }//GEN-LAST:event_TablePedidosMouseClicked
-
-    private void TablePedidosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePedidosMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TablePedidosMouseEntered
-
-    private void labelLogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelLogoMouseClicked
-        // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(0);
-        PanelSalas.removeAll();
-        panelSalas();
-    }//GEN-LAST:event_labelLogoMouseClicked
-
-    private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jScrollPane2MouseClicked
-
-    private void tableSalaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSalaMouseClicked
-        // TODO add your handling code here:
-        int fila = tableSala.rowAtPoint(evt.getPoint());
-        txtIdSala.setText(tableSala.getValueAt(fila, 0).toString());
-        txtNombreSala.setText(tableSala.getValueAt(fila, 1).toString());
-        txtMesas.setText(tableSala.getValueAt(fila, 2).toString());
-    }//GEN-LAST:event_tableSalaMouseClicked
-
-    private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPassActionPerformed
-
-    private void TableUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableUsuariosMouseClicked
-        // TODO add your handling code here:
-        // Obtener la fila seleccionada en la tabla
-        int fila = TableUsuarios.rowAtPoint(evt.getPoint());
-
-        // Establecer los valores en los campos de texto correspondientes   
-        txtIdEmpleado.setText(TableUsuarios.getValueAt(fila, 0).toString());
-        txtNombre.setText(TableUsuarios.getValueAt(fila, 1).toString());
-        txtApellidosEmpleado.setText(TableUsuarios.getValueAt(fila, 2).toString());
-        txtCorreo.setText(TableUsuarios.getValueAt(fila, 3).toString());
-        txtCelularEmpleado.setText(TableUsuarios.getValueAt(fila, 6).toString());
-        txtDNIEmpleado.setText(TableUsuarios.getValueAt(fila, 7).toString());
-        txtDireccionEmpleado.setText(TableUsuarios.getValueAt(fila, 9).toString());
-
-        // Establecer el valor seleccionado en el ComboBox de género
-        String genero = TableUsuarios.getValueAt(fila, 8).toString();
-        cbxGeneroEmpleado.setSelectedItem(genero);
-
-        // Establecer el valor en el campo de contraseña (opcional, depende de los requisitos de seguridad)
-        txtPass.setText(TableUsuarios.getValueAt(fila, 4).toString());
-
-        // Establecer el valor seleccionado en el ComboBox de rol
-        String rol = TableUsuarios.getValueAt(fila, 5).toString();
-        cbxRol.setSelectedItem(rol);
-    }//GEN-LAST:event_TableUsuariosMouseClicked
-
-    private void TablePlatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePlatosMouseClicked
-        // TODO add your handling code here:
-        // TODO add your handling code here:
-        int fila = TablePlatos.rowAtPoint(evt.getPoint());
-
-        // Establece los valores de los otros campos de texto
-        txtIdPlato.setText(TablePlatos.getValueAt(fila, 0).toString());
-        txtNombrePlato.setText(TablePlatos.getValueAt(fila, 1).toString());
-
-        // Establece el valor seleccionado del ComboBox
-        String tipoPlato = TablePlatos.getValueAt(fila, 2).toString(); // Obtén el valor de la columna del tipo de plato
-        cbxTipoPlato.setSelectedItem(tipoPlato); // Establece el valor en el ComboBox
-
-        txtPrecioPlato.setText(TablePlatos.getValueAt(fila, 3).toString());
-        txtDescripcionPlato.setText(TablePlatos.getValueAt(fila, 4).toString());
-    }//GEN-LAST:event_TablePlatosMouseClicked
-
-    private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
-        // TODO add your handling code here:
-        int selectedRow = tableMenu.getSelectedRow();
-
-        if (selectedRow >= 0) {  // Si se ha seleccionado una fila
-            int id = Integer.parseInt(tableMenu.getValueAt(selectedRow, 0).toString());
-            double precio = Double.parseDouble(tableMenu.getValueAt(selectedRow, 4).toString()); // Precio unitario
-            int cantidadActual = Integer.parseInt(tableMenu.getValueAt(selectedRow, 3).toString()); // Cantidad actual
-
-            // Si la cantidad es mayor a 1, reducir la cantidad en 1
-            if (cantidadActual > 1) {
-                int nuevaCantidad = cantidadActual - 1; // Nueva cantidad después de restar 1
-                double nuevoSubtotal = nuevaCantidad * precio; // Nuevo subtotal
-
-                // Actualiza la cantidad y el subtotal en la tabla
-                tableMenu.setValueAt(nuevaCantidad, selectedRow, 3); // Actualiza cantidad (columna 3)
-                tableMenu.setValueAt(nuevoSubtotal, selectedRow, 5);  // Actualiza subtotal (columna 5)
-
-                // Actualiza el total a pagar después de modificar
-                TotalPagar(tableMenu, totalMenu);
-            } else {
-                // Si la cantidad es 1, no puedes reducirla más
-                JOptionPane.showMessageDialog(null, "La cantidad no puede ser menor a 1.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-            }
-        } else {
-            // Si no se ha seleccionado ninguna fila, mostrar un mensaje
-            JOptionPane.showMessageDialog(null, "Por favor, selecciona un registro para restar.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
-    }//GEN-LAST:event_RestarActionPerformed
-
-    private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
-        // TODO add your handling code here:
-        ExportarExcel obj;
-
-        try{
-            obj = new ExportarExcel();
-            obj.exportarExcel(TablePedidos);
-        } catch (IOException ex) {
-            System.out.println("Error: " + ex);
-        }
-    }//GEN-LAST:event_btnExportarActionPerformed
 
 
     /**
@@ -2679,6 +2645,7 @@ public class frmPolleria extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2686,7 +2653,6 @@ public class frmPolleria extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel labelLogo;
