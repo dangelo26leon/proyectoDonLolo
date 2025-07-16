@@ -1236,9 +1236,14 @@ public class frmPolleria extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Plato", "Categoria", "Cantidad", "Precio", "Comentario", "ID Pedido", "Estado"
+                "ID", "Plato", "Tipo", "Cantidad", "Precio", "Comentario", "ID Pedido", "Estado"
             }
         ));
+        tableConfirmacionPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableConfirmacionPedidosMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(tableConfirmacionPedidos);
 
         jPanel7.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 1390, 230));
@@ -2544,6 +2549,15 @@ public class frmPolleria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBuscarPlatoActionPerformed
 
+    private void tableConfirmacionPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableConfirmacionPedidosMouseClicked
+        // TODO add your handling code here:
+        int fila = tableConfirmacionPedidos.rowAtPoint(evt.getPoint());
+        int id_detalle = Integer.parseInt(tableConfirmacionPedidos.getValueAt(fila, 0).toString());
+
+        jTabbedPane1.setSelectedIndex(6);
+        txtIdDetalle.setText("" + id_detalle);
+    }//GEN-LAST:event_tableConfirmacionPedidosMouseClicked
+
 
     /**
      * @param args the command line arguments
@@ -2962,18 +2976,19 @@ public class frmPolleria extends javax.swing.JFrame {
     }
 
     private void ListarPedidos() {
-        Tables color = new Tables();
+        Tables color = new Tables(6); // CAMBIADO: Pasa el índice de la columna de estado (6)
         List<Pedido> Listar = pedDao.listarPedidos();
         modelo = (DefaultTableModel) TablePedidos.getModel();
         Object[] ob = new Object[7];
+        
         for (int i = 0; i < Listar.size(); i++) {
-            ob[0] = Listar.get(i).getId();         // ID Pedido
-            ob[1] = Listar.get(i).getSala();       // Sala (nombre)
-            ob[2] = Listar.get(i).getUsuario();    // Usuario
-            ob[3] = Listar.get(i).getNum_mesa();   // Número de Mesa
-            ob[4] = Listar.get(i).getFecha();      // Fecha
-            ob[5] = Listar.get(i).getTotal();      // Total
-            ob[6] = Listar.get(i).getEstado();     // Estado
+            ob[0] = Listar.get(i).getId();
+            ob[1] = Listar.get(i).getSala();
+            ob[2] = Listar.get(i).getUsuario();
+            ob[3] = Listar.get(i).getNum_mesa();
+            ob[4] = Listar.get(i).getFecha();
+            ob[5] = Listar.get(i).getTotal();
+            ob[6] = Listar.get(i).getEstado(); // Columna 6 es 'Estado' para TablePedidos
             modelo.addRow(ob);
         }
         colorHeader(TablePedidos);
@@ -3036,27 +3051,28 @@ public class frmPolleria extends javax.swing.JFrame {
             modelo.setRowCount(0); // Limpiar la tabla
         }
     }
-
+    
     private void ListarDetallesPedido() {
-        Tables color = new Tables(); // Clase para personalizar la tabla, como en el ejemplo.
-        List<DetallePedido> listarDetalles = pedDao.listarDetallesPedido(); // Llama al DAO para obtener los detalles.
+        Tables colorConfirmacion = new Tables(7); // CAMBIADO: Pasa el índice de la columna de estado (7)
+        List<DetallePedido> listarDetalles = pedDao.listarDetallesPedido();
         modelo = (DefaultTableModel) tableConfirmacionPedidos.getModel();
-        //modelo.setRowCount(0); // Limpia la tabla antes de llenarla.
-        Object[] ob = new Object[8]; // Ajusta el tamaño del arreglo al número de columnas en la tabla.
+        modelo.setRowCount(0); 
+        Object[] ob = new Object[8];
         for (int i = 0; i < listarDetalles.size(); i++) {
-            ob[0] = listarDetalles.get(i).getId_detallepedido();          // ID Detalle
-            ob[1] = listarDetalles.get(i).getNombre();      // Nombre del Producto
-            ob[2] = listarDetalles.get(i).getTipoPlato();   // Tipo de Plato
-            ob[3] = listarDetalles.get(i).getCantidad();    // Cantidad
-            ob[4] = listarDetalles.get(i).getPrecio();      // Precio Unitario
-            ob[5] = listarDetalles.get(i).getComentario();  // Comentario
+            ob[0] = listarDetalles.get(i).getId_detallepedido();
+            ob[1] = listarDetalles.get(i).getNombre();
+            ob[2] = listarDetalles.get(i).getTipoPlato();
+            ob[3] = listarDetalles.get(i).getCantidad();
+            ob[4] = listarDetalles.get(i).getPrecio();
+            ob[5] = listarDetalles.get(i).getComentario();
             ob[6] = listarDetalles.get(i).getId_pedido();
-            ob[7] = listarDetalles.get(i).getEstado();
-            modelo.addRow(ob); // Añade la fila al modelo de la tabla.
+            ob[7] = listarDetalles.get(i).getEstado(); 
+            modelo.addRow(ob);
         }
-        colorHeader(tableConfirmacionPedidos); // Aplica el estilo al encabezado.
-        tableConfirmacionPedidos.setDefaultRenderer(Object.class, color); // Aplica el estilo a las celdas.
+        colorHeader(tableConfirmacionPedidos);
+        tableConfirmacionPedidos.setDefaultRenderer(Object.class, colorConfirmacion); // Usa la nueva instancia de Tables
     }
+
 
     private void actualizarTablaDetalles() {
         DefaultTableModel modelo = (DefaultTableModel) tableConfirmacionPedidos.getModel();
