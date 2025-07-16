@@ -102,7 +102,7 @@ public class frmPolleria extends javax.swing.JFrame {
         }
         
         if (priv.getRol().equals("Cocinero")) {
-            // Deshabilitar la pestaña y otras funcionalidades
+            // Deshabilitar la pestaña y otras funcionalidadesss
             jTabbedPane1.setEnabled(false);
             jPanel9.setEnabled(false);
             PanelSalas.setEnabled(false);
